@@ -1,0 +1,4 @@
+interface:
+  display_name: "青春疼痛文学"
+  short_description: "生成具有 2005–2015 中文互联网年代感的青春疼痛文学"
+  default_prompt: "使用 $youth-pain-literature 写一组 2010 年 QQ 空间风格的青春疼痛句子。"
