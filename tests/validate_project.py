@@ -55,6 +55,16 @@ def render_output(record):
     return "\n\n".join(f"{i}. {value}" for i, value in enumerate(outputs, 1))
 
 
+def render_readme_output(record):
+    """Wrap prose without altering saved text; explicit breaks preserve short lines."""
+    lines = render_output(record).split("\n")
+    return "\n".join(
+        "> " + line + ("<br>" if line and i + 1 < len(lines) and lines[i + 1] else "")
+        if line else ">"
+        for i, line in enumerate(lines)
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--fingerprint", action="store_true", help="Print current instruction hash only")
@@ -121,9 +131,13 @@ def main():
     check([row["params"]["intensity"] for row in intensity_rows] == [2, 3, 5], "Intensity levels mismatch")
     for row in data["demos"]:
         for kind, expected in [("prompt", render_prompt(row)), ("output", render_output(row))]:
-            pattern = rf"<!-- {row['id']}:{kind} -->\n```text\n(.*?)\n```\n<!-- /{row['id']}:{kind} -->"
+            pattern = rf"<!-- {row['id']}:{kind} -->\n(.*?)\n<!-- /{row['id']}:{kind} -->"
             matches = re.findall(pattern, readme, re.S)
-            check(matches == [expected], f"README {row['id']} {kind} not an exact copy")
+            allowed = [f"```text\n{expected}\n```"]
+            if kind == "output":
+                allowed.append(render_readme_output(row))
+            check(len(matches) == 1 and matches[0] in allowed,
+                  f"README {row['id']} {kind} not an exact copy")
 
     case_text = (ROOT / "tests/cases.md").read_text()
     case_sections = re.split(r"^## Case \d+｜.*$", case_text, flags=re.M)[1:]
