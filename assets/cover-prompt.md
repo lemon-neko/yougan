@@ -1,17 +1,13 @@
-# README 封面
+# 有感封面
 
-用途：项目首页横幅。使用 Codex 内置 `image_gen` 生成，不是历史照片，也不是 QQ 产品截图；没有使用外部参考图片。最终文件为 [readme-cover.png](readme-cover.png)。
+使用内置 imagegen 生成，2026-10-13。AI 图像，不是实拍或历史照片。项目资源为 [yougan-cover.png](yougan-cover.png)。最终图片已检查品牌名与中文文案，未再编辑。
 
-## 生成提示词
+## 完整生成提示词
 
 ```text
-Use case: illustration-story
-Asset type: a single wide atmospheric hero banner for the GitHub README of youth-pain-literature, a Chinese nostalgic QQ / Tieba writing skill.
-Primary request: create a relaxed, inviting, slightly wistful summer-evening scene that feels like an ordinary Chinese teenager's desk around 2008–2010, not a solemn literary poster.
-Scene/backdrop: a small lived-in study corner beside an open window at sunset, a soft curtain stirred by summer air, distant leafy trees and an ordinary apartment roof visible outside.
-Subject: an off-white CRT monitor and matching keyboard on a worn wooden desk; a small open notebook with no legible writing nearby. The monitor glows pale blue with a minimal abstract old instant-messaging window made of simple panels and a few tiny avatar squares, no real text or brand logos. No people.
-Style/medium: delicate hand-painted editorial illustration, softly textured, subtle film grain, believable everyday proportions and details, slightly faded like a memory. Not pixel art, not 3D, not glossy anime, not a UI screenshot.
-Composition/framing: very wide horizontal banner, approximately 2.4:1 aspect ratio, around 1920 by 800 pixels. A coherent single scene with balanced breathing room; keep the desk and monitor readable at GitHub README width. No collage panels, no picture frame, no embedded typography.
-Lighting/mood: warm late-summer sunlight mixing with the cool monitor glow; gentle, cozy, playful nostalgia, an unfinished message rather than a tragic farewell.
-Constraints: period-appropriate objects; no smartphone, no modern laptop, no neon cyberpunk, no stock-photo polish, no hearts, no tears, no watermarks, no readable text.
+Use case: ads-marketing
+Asset type: horizontal GitHub README cover for 有感 / YOUGAN, an open source Chinese creative-expression skill platform.
+Primary request: refined contemporary editorial cover, wide landscape 3:2 with generous empty space and tactile paper. Warm ivory background, charcoal typography, single muted vermilion accent. A sculptural still life of translucent folded tracing paper, a small red thread connecting two handmade paper forms, one faint pencil line becoming an expressive organic shape. Composition calm, spacious, asymmetrical; physical studio photography meets an art publication. Suggest feeling becoming a work through observation, imagination and empathy. No retro computer or school nostalgia.
+Text (verbatim): "有感" large restrained Chinese serif headline upper left, "YOUGAN" small letterspaced below, "让感受成为作品" readable secondary line. No other text.
+Lighting: soft side daylight, subtle real paper grain and delicate shadows. Avoid shiny tech effects, gradients, UI cards, robots, neon, stock team imagery, watermarks. Make the Chinese characters correct and leave breathing room around text.
 ```

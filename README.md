@@ -1,489 +1,229 @@
-![夏日黄昏里的旧电脑与一本还没写完的笔记](assets/readme-cover.png)
+![有感：纸张、红线与留白，连接感受和作品](assets/yougan-cover.png)
 
-# 青春疼痛文学
+# 有感 · yougan
 
-`youth-pain-literature` · Codex Skill · 简体中文 · [MIT](LICENSE)
+### 让感受成为作品
 
-> 把语气调回 2010，把那句“算了”先删掉。
+一个面向 AI 时代的开源内容与技能平台。从一次开心、一点孤独、一个没说清的念头开始，用 **审美、创新与共情**，把它做成带有个人语气的文字或视觉创意方案。
 
-头像亮了又暗，空间日志写了又删。课间只有十分钟，喜欢一个人倒像过了好多年。
+[快速体验](#快速体验) · [能力导航](#能力导航) · [作品案例](#作品案例) · [安装使用](#安装使用) · [参与贡献](#参与贡献)
 
-这是一个写中文互联网青春疼痛文学的小 Skill。给它一个主题，它会试着找回 2005～2015 年前后，QQ 签名、空间日志、贴吧句子楼里那种认真得有点好笑、现在看又有点舍不得的语气。
+## 快速体验
 
-可以写一场没赶上的放学，也可以什么故事都不讲，只对着夜晚多按几次回车。至于矫情到什么程度——旋钮交给你。
+安装后，给 AI 一段真实的素材就能开始：
 
-[先看效果](#examples) · [安装](#installation) · [怎么用](#usage) · [参数](#parameters) · [一起写](#contributing)
+```text
+使用 $yougan
+今天第一次独自做成一顿饭，盐放多了，但我很开心。
+写四行轻快的小诗，保留盐放多这个细节，不编造他人反应。
+```
 
-## 可以拿它写点什么
+<!-- D01:quick-output -->
+> 盐比计划多了一点，<br>
+> 饭还是盛了满满一碗。<br>
+> 今天的厨师只有我，<br>
+> 值得自己多坐一会儿。
+<!-- /D01:quick-output -->
 
-- **短句和签名**：暗恋、毕业、被删好友。字数可以少，心事不一定。
-- **独白和故事**：校园小事、QQ 空间日志，或者一段旧贴吧式的分行抒情。
-- **改写和多版本**：把今天的文案换个年代说，再试试克制、伤感、放学后天都塌了的不同档位。
+这是一份 AI 辅助编辑示例。你也可以让它先梳理感受、试几个方向，或只打磨你已有的句子。先保留你的意思，再寻找表达的形式。
 
-九种风格、42 组原创参考例子。火星文和抽象二创都有，但默认关着，放心点开。
+## 能力导航
 
-<a id="examples"></a>
+| 想做的事 | 可以这样说 | 对应资源 |
+| --- | --- | --- |
+| 感受观察 | “我说不清为什么在意，帮我找一个表达切口。” | [观察提示词](prompts/observe.md) · [共情指南](references/empathy.md) |
+| 创意探索 | “保留这件事，给三个真正不同的表达方向。” | [探索提示词](prompts/ideate.md) · [创新指南](references/innovation.md) |
+| 作品创作 | “把这个发现写成诗，或者做成海报方案。” | [创作提示词](prompts/create.md) · [视觉交付](references/visual.md) |
+| 审美打磨 | “这段不像我，保留那个笨拙的比喻再改。” | [打磨提示词](prompts/refine.md) · [审美指南](references/aesthetics.md) |
+| 作品赏析 | “这句话为什么有感觉？给我一个练习。” | [赏析提示词](prompts/review.md) · [审美指南](references/aesthetics.md) |
 
-## 实际生成效果
+**审美**，是知道一个细节、一处停顿或一块留白为什么有效。<br>
+**创新**，是找到不同的观察角度和表达结构。<br>
+**共情**，是让感受有位置，也让人物保有复杂性。
 
-先不讲原理，看看它会写出什么。
+## 作品案例
+
+六组原创编辑示例，包含完整请求与输出。素材为虚构或通用场景，由本次实现中的 AI 助手辅助创作与整理；不是真实投稿、独立评测或原创性认证。[查看案例全文](references/examples.md) · [编辑示例记录](tests/examples.json)
 
 <details>
-<summary>这些句子从哪来？</summary>
-
-下面六组来自 2026-09-03 的当前对话试跑：读取新版 Skill 后直接生成，没有使用子代理。提示词、参数和输出都留在了[原始记录](tests/runs/2026-09-03.json)里；这里只调整展示排版，正文没有额外润色。它们是生成示例，不是独立评测，也不是参考帖摘抄。
-
-每组的“提示词与参数”都能展开复制。以下示例均未开启抽象二创，`huoxingwen` 未指定，默认 `false`。
-
-</details>
-
-### 青春遗憾短句 · 五条装
-
-<details>
-<summary>提示词与参数</summary>
+<summary>喜悦 · 四行诗</summary>
 
 <!-- D01:prompt -->
 ```text
-使用 $youth-pain-literature
-写 5 条青春遗憾短句，主题是毕业时没说出口的喜欢。兼有校园小事和直接倾诉，每条 2～5 句，不要全部用后来转折。
-
-style=tieba
-emotion=["graduation","secret-love","unspoken"]
-era=2010
-length=short
-intensity=3
-cringe=3
-count=5
+使用 $yougan。今天第一次独自做成一顿饭，盐放多了，但我很开心。写四行轻快的小诗，保留盐放多这个细节，不编造他人反应。
 ```
 <!-- /D01:prompt -->
 
-</details>
-
 <!-- D01:output -->
-> 1. 散伙饭上，他们起哄让我说一个秘密。<br>
-> 你也跟着笑，我就临时换了一个。
->
-> 2. 别祝我遇见更喜欢的人。<br>
-> 我喜欢你这件事，还没有说完。
->
-> 3. 你能不能把那句再见说慢一点？<br>
-> 我还没想好，往后该用什么理由叫住你。
->
-> 4. 喜欢像一根很短的火柴。<br>
-> 我护了它三年，还是没敢让你看见亮光。
->
-> 5. 合照的时候我往你那边挪了一点，又挪了一点。<br>
-> 摄影师说别挤了，我才站好。<br>
-> 我能承认的，也就这么一点。
+> 盐比计划多了一点，<br>
+> 饭还是盛了满满一碗。<br>
+> 今天的厨师只有我，<br>
+> 值得自己多坐一会儿。
 <!-- /D01:output -->
 
-### 旧贴吧分行抒情 · 回车键也有心事
+</details>
 
 <details>
-<summary>提示词与参数</summary>
+<summary>友情 · 一封短笺</summary>
 
 <!-- D02:prompt -->
 ```text
-使用 $youth-pain-literature
-写一段旧贴吧式分行抒情，主题是你离开以后，我还不肯让回声停下来。允许浓烈比喻和有意复沓，100～180 字，不写校园或 QQ，不引用参考帖原句。
-
-style=qzone
-emotion=["departure","loneliness"]
-era=2015
-length=paragraph
-intensity=4
-cringe=4
-count=1
+使用 $yougan。朋友要搬走，我帮他封好最后一个纸箱。写一封短笺，不替他承诺联系，不编造共同往事。
 ```
 <!-- /D02:prompt -->
 
-</details>
-
 <!-- D02:output -->
-> 别急着安静下来，<br>
-> 让我再叫你一次。<br>
-> 哪怕回来的只是回声，<br>
-> 哪怕它只会照着我的声音，<br>
-> 笨拙地，把你的名字还给我。<br>
-> 我知道你没有答应，<br>
-> 我知道这空荡荡的一切，并不是你留下来陪我的。<br>
-> 可我还是舍不得停。<br>
-> 声音一层一层低下去，<br>
-> 像一段不肯走完的长廊，<br>
-> 我追到最后，连自己都快听不清了，<br>
-> 还要对着那一点微弱的响动说：<br>
-> 别急，我在这里。
+> 最后一个箱子封好了。<br>
+> 胶带下面没有什么特别的东西，特别的是刚才我们还站在同一边，把它按平。<br>
+> 你搬过去以后，不用急着把新生活讲得很精彩。想说的时候，发一件小事给我就好。
 <!-- /D02:output -->
 
-### QQ 签名 · 字数有限，心事超标
+</details>
 
 <details>
-<summary>提示词与参数</summary>
+<summary>孤独 · 一张海报</summary>
 
 <!-- D03:prompt -->
 ```text
-使用 $youth-pain-literature
-写 3 条发现被删 QQ 好友的个性签名，每条 10～30 字，结构不同。
-
-style=signature
-emotion=["breakup","regret"]
-era=2008
-length=one-line
-intensity=4
-cringe=4
-count=3
+使用 $yougan。做一张关于独居夜晚的海报概念，给刚开始独居的年轻人。允许虚构视觉设定，不做治愈标语，只交付方案。
 ```
 <!-- /D03:prompt -->
 
-</details>
-
 <!-- D03:output -->
-> 1. 连陌生人都能重新认识你，我却不能。
->
-> 2. 验证消息写到一半，忽然不敢说我是谁。
->
-> 3. 能不能晚一点忘记，我还没学会不找你……
+> 主题：一个人，也有一整张桌子。<br>
+> 用途：面向初次独居者的手机端海报；默认 4:5 竖版。以下为视觉设定。<br>
+> 主视觉：画面下半部是一张只有一个碗的木桌，椅子部分进入画面，留出没有被物件填满的桌面。<br>
+> 构图：视线先落到暖灯下的碗，再到桌面上方的文案。上方约三分之一留白，避免堆满生活用品。<br>
+> 色彩与材质：灰褐木纹、米白陶碗，一小块温暖灯光；保留夜晚暗处，不刻意营造绝望。<br>
+> 主文案：今晚，桌子很宽。<br>
+> 副文案：一只碗。一个还没急着结束的夜晚。<br>
+> 制作：单灯静物拍摄或插画均可；文字后期排入，手机缩小预览确认可读。这是海报方案，未生成图像。
 <!-- /D03:output -->
 
-### QQ 空间独白 · 假装只是随便写写
+</details>
 
 <details>
-<summary>提示词与参数</summary>
+<summary>怀旧 · 改写对照</summary>
 
 <!-- D04:prompt -->
 ```text
-使用 $youth-pain-literature
-写一段 QQ 空间独白：有很多话想给一个人看，发布时却假装没有特定对象。100～200 字，最多两个旧互联网元素，不讲成长道理。
-
-style=qzone
-emotion=["secret-love","unspoken","midnight"]
-era=2010
-length=paragraph
-intensity=3
-cringe=3
-count=1
+使用 $yougan。打磨“我找到了以前的公交卡，已经不能用了，可我还是放回了钱包。”保留事实，不添加人物或往事，给改稿和一句解释。
 ```
 <!-- /D04:prompt -->
 
-</details>
-
 <!-- D04:output -->
-> 这篇日志本来有个名字，打上去又觉得太明显，就删了。第一句也是，写了你的名字，后来改成了有些人。这样别人来看，只会觉得我又在乱写东西，你来看，大概也一样。我一边怕你看懂，一边又嫌自己写得不够明白。刚才预览了好几遍，专门挑出那些太像表白的话，删到最后，已经认不出我到底想说什么。可我还是把它发出来了。你要是问起，我就说随便写的。你不问的话，我今晚可能又要把那几句补回去。
+> 我找到了以前的公交卡。已经不能用了，还是把它放回钱包。
+>
+> 把“已经不能用了”单独放到第二句，让后面的动作保留一点停顿；不替这张卡补上具体的人或旅程。
 <!-- /D04:output -->
 
-### 同一句心事，三档音量
-
-还是分班后在楼道听见那个人的声音。主题和其他参数不动，只把 `intensity` 从 2 拧到 3，再拧到 5。
-
-#### intensity=2
+</details>
 
 <details>
-<summary>提示词与参数</summary>
+<summary>日常发现 · 图像提示词</summary>
 
-<!-- D05-2:prompt -->
+<!-- D05:prompt -->
 ```text
-使用 $youth-pain-literature
-主题：分班后，仍能在楼道听见你的声音，却不再说话。写 2～5 句。
-
-style=tieba
-emotion=["regret","departure"]
-era=2010
-length=short
-intensity=2
-cringe=3
-count=1
+使用 $yougan。通勤时看到一片叶子的影子落在空白广告牌上。把这个发现转成图像提示词，清晨、安静、无人物，不要生成图片。
 ```
-<!-- /D05-2:prompt -->
+<!-- /D05:prompt -->
+
+<!-- D05:output -->
+> 图像提示词：清晨街边，一块没有文字的浅灰广告牌占据画面主体，一片树叶的清晰影子刚好落在牌面偏下的位置。竖向 4:5 构图，近景保留广告牌边缘与少量墙面，上半部大面积留白。自然侧光，低饱和灰白与温暖晨光，真实细腻的墙面和金属纹理，安静而带一点偶然的幽默。无人物、无文字、无品牌标志，不添加装饰植物或科幻效果。
+>
+> 视觉设定：将原来的偶然发现放大为主视觉，构图与材质是创作建议。这是一份提示词，尚未生成图片。
+<!-- /D05:output -->
 
 </details>
 
-<!-- D05-2:output -->
-> 课间听见你在楼道里说话，我抬了一下头。<br>
-> 想问问你新同桌怎么样，又觉得你未必想说。
-<!-- /D05-2:output -->
-
-#### intensity=3
-
 <details>
-<summary>提示词与参数</summary>
-
-<!-- D05-3:prompt -->
-```text
-使用 $youth-pain-literature
-主题：分班后，仍能在楼道听见你的声音，却不再说话。写 2～5 句。
-
-style=tieba
-emotion=["regret","departure"]
-era=2010
-length=short
-intensity=3
-cringe=3
-count=1
-```
-<!-- /D05-3:prompt -->
-
-</details>
-
-<!-- D05-3:output -->
-> 楼道里一听见你的声音，我就把要说的话准备好了。<br>
-> 可你从门口走过去，连我站起来都没有看见。
-<!-- /D05-3:output -->
-
-#### intensity=5
-
-<details>
-<summary>提示词与参数</summary>
-
-<!-- D05-5:prompt -->
-```text
-使用 $youth-pain-literature
-主题：分班后，仍能在楼道听见你的声音，却不再说话。写 2～5 句。
-
-style=tieba
-emotion=["regret","departure"]
-era=2010
-length=short
-intensity=5
-cringe=3
-count=1
-```
-<!-- /D05-5:prompt -->
-
-</details>
-
-<!-- D05-5:output -->
-> 你的声音每天都经过这间教室，偏偏没有一句是来找我的。<br>
-> 那么窄的楼道，我竟要把整个青春喊破，才觉得你肯回头。
-<!-- /D05-5:output -->
-
-### 现代文案，换个年代说
-
-<details>
-<summary>提示词与参数</summary>
+<summary>想象性创作 · 三格分镜</summary>
 
 <!-- D06:prompt -->
 ```text
-使用 $youth-pain-literature
-把下面的现代文案改成 2010 年 QQ 空间表达，100～200 字；保留想放手又舍不得的矛盾，不当人生建议，不虚构具体往事。
-原文：停止内耗，允许关系自然流动，接住自己的情绪，成为更好的自己。
-
-style=qzone
-emotion=["departure","regret"]
-era=2010
-length=paragraph
-intensity=3
-cringe=3
-count=1
+使用 $yougan。虚构一个“月亮来图书馆还书”的十二秒短片，三格分镜，温柔但带幽默，说明制作方式，只给方案。
 ```
 <!-- /D06:prompt -->
 
-</details>
-
 <!-- D06:output -->
-> 我想，就写到这里吧。再往下写，又都是舍不得你的话，翻来覆去，连我自己都快背下来了。我也想装得没那么在乎，想明天一醒来就有别的事忙，不用总在心里问你为什么。可现在还不行。现在只要想到以后不再找你，我就想把刚才那句话划掉。你不用回来劝我，我怕你语气稍微好一点，我又误会。就让我一个人把这几行写完，难看也好，反悔也好，今晚先不要让你知道。
+> 制作：纸片定格动画，三格共 12 秒。虚构设定：月亮是会借书的角色。
+>
+> 1. 0–4 秒｜全景：夜间图书馆窗口，一枚小月亮抱着比自己宽的书挪进画面。声音：纸片滑动声；字幕：无。固定机位，切到柜台。<br>
+> 2. 4–8 秒｜近景：月亮把书推到柜台，书页轻轻打开，露出借阅卡上的一排圆形日期印记。声音：盖章声；字幕：“又晚了一圈。”直接切镜。<br>
+> 3. 8–12 秒｜中景：月亮从窗口离开，桌上留下一弯月牙形书签。声音：一声轻响；字幕：无。画面停留后淡出。
+>
+> 道具用纸板与半透明纸制作；字幕后期排入。交付为分镜方案，未生成视频。
 <!-- /D06:output -->
 
-<a id="installation"></a>
+</details>
 
-## 安装
+## 安装使用
 
-这是给 Codex 使用的 Skill，不是一个独立聊天软件。不需要给这个仓库装 npm 依赖，也不需要在里面填写 API Key。
+这是可以安装到 Codex 的 Skill，也是一套可以阅读、复制和贡献的创作资源。仓库不运行独立聊天服务，无需 npm 依赖或在仓库填写 API Key。视觉能力交付海报概念、图像提示词与分镜文本。
 
-### 让 Codex 帮你装
-
-把这段话发给 Codex：
+### 让 Codex 安装
 
 ```text
-使用 $skill-installer，安装这个仓库根目录里的 youth-pain-literature Skill：
-https://github.com/lemon-neko/youth-pain-literature
+使用 $skill-installer，安装仓库根目录的 yougan Skill：
+https://github.com/lemon-neko/yougan
 ```
 
-<details>
-<summary>也可以手动安装（macOS / Linux / WSL）</summary>
+### 手动安装
 
-需要已安装 Git。以下将仓库放进用户级 Skill 目录：
+在 macOS / Linux / WSL 中，需要 Git，且目标目录不存在：
 
 ```bash
 mkdir -p ~/.agents/skills
-git clone https://github.com/lemon-neko/youth-pain-literature.git \
-  ~/.agents/skills/youth-pain-literature
+git clone https://github.com/lemon-neko/yougan.git ~/.agents/skills/yougan
 ```
 
 以后更新：
 
 ```bash
-git -C ~/.agents/skills/youth-pain-literature pull --ff-only
+git -C ~/.agents/skills/yougan pull --ff-only
 ```
 
-如果已经安装过，请在原安装目录更新，不要再装一份同名 Skill。更新前保留好自己的改动；`--ff-only` 遇到分叉会停止，不会替你丢掉本地修改。
+更新前保留自己的改动；出现分叉时 `--ff-only` 会停止。安装后在支持本地 Skills 的 Codex 会话中调用 `$yougan`，若当前会话未发现，重新启动会话。已安装青春疼痛文学的用户见 [迁移与旧版入口](HISTORY.md)。
 
-</details>
-
-Codex 会自动发现新安装的 Skill；如果暂时没有出现，重启后再试。安装目录与发现机制见 [OpenAI 官方说明](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)。
-
-<a id="usage"></a>
-
-## 怎么用
-
-不用背参数，正常说话就行：
+### 自然语言优先
 
 ```text
-使用 $youth-pain-literature
-写 5 条毕业那年没表白的青春疼痛句子，像 2010 年贴吧。
-别太成熟，也别每条都用“后来”开头。
+使用 $yougan
+我在公交车上看到两个人同时给同一位老人让座。
+先帮我找三个表达方向，轻巧一点，不要上升成人生道理。
 ```
 
-想要更具体一点，就把你脑海里的画面交给它：
+也可以选填参数；不是必填问卷：
 
-```text
-使用 $youth-pain-literature
-写一小段晚自习结束后，在车棚等喜欢的人。
-2008 年，夏天，100～200 字。克制一点，不要写成多年后的总结。
-```
+| 参数 | 用法 |
+| --- | --- |
+| `task` | `observe` / `ideate` / `create` / `refine` / `review` |
+| `medium` | 短句、诗、书信、独白、短故事、海报概念、图像提示词、分镜等 |
+| `audience` | 给谁看、在哪里阅读或观看 |
+| `tone` | 轻快、笨拙、克制、好奇，或你自己的描述 |
+| `count` | 数量；默认一份，创意探索默认三个方向 |
 
-也可以不讲故事，让心事自己说话：
+不指定任务时，Skill 根据请求判断；只给一个主题时默认创作简短文字。完整规则见 [SKILL.md](SKILL.md)。
 
-```text
-使用 $youth-pain-literature
-写一段旧贴吧式分行抒情，主题是“我还不想跟你说晚安”。
-不写校园，也不塞 QQ 物件。可以反复一句话，但每次心情要有一点变化。
-```
+## 参与贡献
 
-<details>
-<summary>想自己调参数，或者偷偷开一下抽象模式？</summary>
+欢迎提交原创案例、改写对照和失败反馈：[提 Issue](https://github.com/lemon-neko/yougan/issues/new/choose) · [贡献说明](CONTRIBUTING.md)。
 
-参数写法：
+请附输入、输出、指令版本，以及“哪一处有效或不对味”。注明素材来源和 AI 参与情况，公开私人素材前确认授权并去除可识别信息。不需要上传完整聊天记录。
 
-```text
-使用 $youth-pain-literature
-theme=初中喜欢的人
-style=qzone
-emotion=[secret-love,summer,graduation]
-era=2008
-length=paragraph
-intensity=4
-cringe=3
-```
-
-改写：
-
-```text
-使用 $youth-pain-literature
-把“我偶尔会想起以前的朋友”改成 2010 年 QQ 空间日志，不要写得太成熟。
-```
-
-抽象二创，需要明确开启：
-
-```text
-使用 $youth-pain-literature
-style=parody
-主题：她删了我的 QQ
-给我 3 条，前半认真，后半轻轻翻个车。
-```
-
-</details>
-
-<a id="parameters"></a>
-
-## 参数
-
-不填也能写。最常用的是这两个旋钮：
-
-- `intensity`：有多难过。`2` 是偶尔想起，`3` 是认真遗憾，`5` 是觉得整个青春都要跟着下雨。
-- `cringe`：有多愿意承认自己矫情。`1` 比较克制，`5` 像那篇不敢让现在的朋友看到的空间日志。
-
-两个都默认 `3`。不是开得越大越好，今天想写什么心情就调到哪里。
-
-<details>
-<summary>完整参数表与九种风格</summary>
-
-| 参数 | 可选值 | 默认值 |
-| --- | --- | --- |
-| `style` | `tieba`、`qzone`、`signature`、<br>`campus-fiction`、`regret`、`internet-nostalgia`、<br>`hope-you-never-understand`、`pseudo-profound`、`parody` | `tieba` |
-| `emotion` | 遗憾、失恋、暗恋、毕业、孤独、怀旧、友情、成长、离开、夏天、青春、深夜、下雨、重逢、没说出口等，可组合 | 按主题推断 |
-| `era` | `2005`、`2008`、`2010`、`2012`、`2015`、`2020s-retro` | `2010` |
-| `length` | `one-line`、`short`、`paragraph`、`post`、`story` | `short` |
-| `intensity` | `1`～`5` | `3` |
-| `cringe` | `1`～`5` | `3` |
-| `huoxingwen` | `true` / `false` | `false` |
-| `count` | 想要的条数 | `1` |
-
-风格对照：贴吧短句 `tieba`、空间独白 `qzone`、个性签名 `signature`、校园故事 `campus-fiction`、青春遗憾 `regret`、旧网怀旧 `internet-nostalgia`、“希望你永远不懂” `hope-you-never-understand`、少年式伪深刻 `pseudo-profound`、抽象二创 `parody`。
-
-`era` 也接受相近年份；`2020s-retro` 用来写今天回头看当年。长度从一句话到小故事，详见 [Skill 说明](SKILL.md)。
-
-火星文只在 `huoxingwen=true` 时开启；`parody` 也需要明确请求。“抽象抒情”不等于“抽象搞笑”，不用担心写着写着突然变成段子。
-
-</details>
-
-## 小问题，先替你问了
-
-**是不是只有校园和 QQ？**
-
-不是。它保留校园小事，也能直接倾诉、分行抒情、串联意象。没有校服、头像、MP3，也可以写得很有那个年代的感觉。
-
-**怎么感觉写得太像今天的文案？**
-
-直接补一句“少讲道理，不要心理学套话，像当时正在发生”。也可以给一个动作、一句对白，或者说清楚你想对谁说话。
-
-**会复制贴吧原句吗？**
-
-项目的目标是原创表达，参考的是节奏和写法，不是换几个词复刻原句。不过生成内容仍可能与常见表达相似，公开使用前，值得自己再读一遍。
-
-## 项目里装了什么
-
-```text
-.
-├── SKILL.md              # 写作规则与入口
-├── agents/openai.yaml    # Skill 展示信息
-├── references/           # 九种风格、年代指南、42 组例子与来源笔记
-├── prompts/              # 生成、改写、年代模仿、评价模板
-├── tests/                # 行为测试、原始试跑记录与校验脚本
-├── assets/               # README 封面与生成提示词
-├── README.md
-└── LICENSE
-```
-
-## 灵感与说明
-
-这次回看的两扇旧窗户：
-
-- 美文吧：[《我想用我的文字，和青春作伴》](https://tieba.baidu.com/p/3146320263)
-- 长短句吧：[《你看南风吹，我等故人归》](https://tieba.baidu.com/p/4413356400)
-
-只读到了部分楼主内容，没有读完整帖，也不把它们标成“句子吧精品”。我们借鉴分行、复沓和直接抒情的方式，不收录整帖原文；具体阅读范围放在[来源笔记](references/source-notes.md)。
-
-封面是为本项目生成的 AI 插画，不是历史照片或 QQ 官方素材。[图片与生成提示词](assets/cover-prompt.md)一并留档。
-
-<details>
-<summary>想看验证和试跑记录，点这里</summary>
-
-在仓库根目录运行（需要 Python 3，无第三方依赖）：
+### 验证与可追溯性
 
 ```bash
 python3 tests/validate_project.py
+python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
-脚本检查引用、参数、42 组示例与九类覆盖、试跑数量和长度、明显重复片段，以及 README 与保存记录的一致性。示例可以换排版，但不能悄悄改正文。字数不计空白和标点，句数是标点近似检查。
+五种能力各两个场景，每个场景两份同助手试跑输出，共二十份；生成环境和逐次自查均写入记录。[测试说明](tests/cases.md) · [当前试跑](tests/runs/2026-10-13.json)。自动检查覆盖链接、指纹、案例一致性及客观约束，不能证明审美、原创性或读者共鸣；人工自查也不等于独立评测。
 
-已有[十类行为测试](tests/cases.md)，每类两次试跑。[原始输入输出](tests/runs/2026-09-03.json)、[检查报告](tests/runs/2026-09-03-review.md)和[初版基线](tests/acceptance-output.md)都保留在仓库里。生成和自检来自同一对话助手，不是独立评测；官方 Skill 结构校验通过，也不代表文学质量或原创性得到了认证。
+### 从哪里来
 
-</details>
+有感从 youth-pain-literature 演变而来。原 Skill、42 组参考示例、旧封面与试跑记录保存在历史标签中，详见 [项目历史](HISTORY.md)。新平台保留对真诚表达的重视，也容纳快乐、幽默、想象与日常发现。
 
-<a id="contributing"></a>
+封面由内置 imagegen 生成，是 AI 图像；[完整提示词](assets/cover-prompt.md) 随项目保存。
 
-## 一起写
-
-欢迎带着你的“这句不对味”来提 [Issue](https://github.com/lemon-neko/youth-pain-literature/issues)，也欢迎 PR。
-
-最好附上提示词、参数、实际输出，以及你觉得哪里太现代、太工整或太像同一个模板。分享参考帖时留一个链接就好，不需要把整篇搬过来。聊天记录里的人名和联系方式，记得先藏好。
-
-新增写法尽量兼顾校园叙事和抒情，保留默认关闭的火星文与抽象二创开关；改完跑一次校验。如果修改了写作规则，重新保存对应试跑，别把旧记录当成新结果。
-
-## License
-
-[MIT](LICENSE)。欢迎使用、修改和分享，分发时保留许可证声明。
-
----
-
-写完记得保存。那年没保存的，已经够多了。
+[MIT License](LICENSE) · Copyright © 2026 lemon-neko

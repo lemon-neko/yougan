@@ -1,4 +1,4 @@
 interface:
-  display_name: "青春疼痛文学"
-  short_description: "生成具有 2005–2015 中文互联网年代感的青春疼痛文学"
-  default_prompt: "使用 $youth-pain-literature 写一组 2010 年 QQ 空间风格的青春疼痛句子。"
+  display_name: "有感 · yougan"
+  short_description: "从真实感受出发，用审美、创意与共情打磨文字作品和视觉表达方案"
+  default_prompt: "使用 $yougan，把我提供的一段日常感受变成有个人语气的作品，保留具体细节。"
