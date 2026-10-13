@@ -1,0 +1,626 @@
+{
+  "items": [
+    {
+      "id": "salty-dinner",
+      "title": "盐放多了的一顿饭",
+      "subtitle": "今天的失误，有米饭接住。",
+      "kind": "original",
+      "category": "empathy",
+      "format": "poem",
+      "tags": [
+        "轻快",
+        "日常",
+        "小诗"
+      ],
+      "cover": "assets/salty-dinner.jpg",
+      "coverAlt": "一顿家常饭的原创视觉排版，盐粒与餐盘构成轻快的日常画面",
+      "coverCredit": "有感编辑部 · AI 辅助原创视觉",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "盐罐今天没刹住车，\n青菜抢先抵达了海边。\n我多盛一碗白饭，\n把这次旅行吃完。",
+        "一首关于做饭失手的虚构小诗。给失误留个座位，也给白米饭一点戏份。"
+      ],
+      "collections": [
+        "daily"
+      ],
+      "featured": true,
+      "source": null,
+      "interaction": null
+    },
+    {
+      "id": "last-box",
+      "title": "最后一个纸箱",
+      "subtitle": "搬走的是行李，留下的是叫错名字也有人答应的日子。",
+      "kind": "original",
+      "category": "empathy",
+      "format": "letter",
+      "tags": [
+        "友情",
+        "搬家",
+        "怀旧"
+      ],
+      "cover": "assets/last-box.jpg",
+      "coverAlt": "搬家纸箱与留在窗边的小物件，呈现友情短笺中的告别场景",
+      "coverCredit": "有感编辑部 · AI 辅助原创视觉",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "阿禾：",
+        "最后一个纸箱封好了。你写的“易碎”歪在侧面，像那年我们贴在门上的春联。先别笑，胶带是你撕的。",
+        "我把那只缺口碗也装进去了。我们总说该扔，又总在吃泡面时把它找出来。到了新家，它大概还会继续上班。",
+        "钥匙放在鞋柜第二层。空房间回声很大，我叫了一声你的名字，才想起你今天不用回来。",
+        "新地址已经发你。下次来的时候，不用带礼物，带一双你穿惯的拖鞋。",
+        "小林\n搬家这天",
+        "这封短笺和人物均为虚构。写给一种友情：不必把告别说得很大，也知道下次还能见面。"
+      ],
+      "collections": [
+        "perspective"
+      ],
+      "featured": true,
+      "source": null,
+      "interaction": null
+    },
+    {
+      "id": "wide-table",
+      "title": "今晚，桌子很宽",
+      "subtitle": "一人份的晚餐，和暂时没有安排的另一半桌面。",
+      "kind": "original",
+      "category": "aesthetic",
+      "format": "poster",
+      "tags": [
+        "独居",
+        "留白",
+        "海报"
+      ],
+      "cover": "assets/wide-table.jpg",
+      "coverAlt": "独居主题原创海报：餐桌上的单人餐具与大片留白",
+      "coverCredit": "有感编辑部 · AI 辅助原创海报",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "今晚，桌子很宽。",
+        "一碗面占左边，\n一盏灯占右边。\n中间空着，\n先不替它安排什么。",
+        "一张关于独处的虚构海报。空的位置可以是想念，也可以只是空着；这顿饭没有替吃饭的人作决定。"
+      ],
+      "collections": [
+        "wordless",
+        "perspective"
+      ],
+      "featured": true,
+      "source": null,
+      "interaction": null
+    },
+    {
+      "id": "shadow-ad",
+      "title": "影子替广告牌上班",
+      "subtitle": "没有预算，没有文案，树叶投来了一整版。",
+      "kind": "original",
+      "category": "aesthetic",
+      "format": "photo",
+      "tags": [
+        "光影",
+        "日常发现",
+        "街头"
+      ],
+      "cover": "assets/shadow-ad.jpg",
+      "coverAlt": "摄影风格原创图像：树叶的影子落在空白广告牌上",
+      "coverCredit": "有感编辑部 · AI 辅助原创摄影风格图像，非实景摄影",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "今日广告：风经过这里。",
+        "空白的广告牌没来得及换画面，树先把叶子借给它。阳光负责投影，风负责翻页。广告位全天营业，内容每秒不同。",
+        "这是一幅摄影风格的虚构街头图像，并非实地拍摄记录。它把通常被当作背景的影子，放到了主角的位置。"
+      ],
+      "collections": [
+        "daily",
+        "wordless"
+      ],
+      "featured": true,
+      "source": null,
+      "interaction": null
+    },
+    {
+      "id": "moon-library",
+      "title": "月亮来图书馆还书",
+      "subtitle": "借了一个月的书，书角有一点潮汐。",
+      "kind": "original",
+      "category": "creative",
+      "format": "comic",
+      "tags": [
+        "想象",
+        "三格故事",
+        "月亮"
+      ],
+      "cover": "assets/moon-library.jpg",
+      "coverAlt": "三格原创插画故事：月亮到夜间图书馆归还一本书",
+      "coverCredit": "有感编辑部 · AI 辅助原创插画",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "第一格｜夜间还书口\n图书馆快关门了。一枚小月亮抱着比自己还宽的书，慢慢挪进窗口。今晚它没有什么特别的愿望，只想别把书角碰弯。",
+        "第二格｜柜台\n书被推到柜台上。管理员盖下一枚圆圆的日期章，月亮看着它，小声说：“这个形状，我也还在练习。”",
+        "第三格｜留下一点光\n月亮从窗口离开。桌上多了一枚月牙书签，刚好能夹住今晚还没读完的那一页。",
+        "虚构三格故事，画面为 AI 辅助原创插画。没有人催月亮立刻变圆，书也可以明天再读。"
+      ],
+      "collections": [
+        "daily"
+      ],
+      "featured": true,
+      "source": null,
+      "interaction": null
+    },
+    {
+      "id": "wrong-use-museum",
+      "title": "用错用途博物馆",
+      "subtitle": "三件日常物品，三份没有人招聘的新工作。",
+      "kind": "original",
+      "category": "creative",
+      "format": "exhibition",
+      "tags": [
+        "物件",
+        "脑洞",
+        "小展览"
+      ],
+      "cover": "assets/wrong-use-museum.jpg",
+      "coverAlt": "原创小展览：杯子变成望月镜，雨伞收集彩色光线，回形针成为一扇小门",
+      "coverCredit": "有感编辑部 · AI 辅助原创视觉",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "01｜杯子 · 袖珍望月镜\n把习惯盛水的口朝向夜空，今晚它负责盛一点月光。支架是想象出来的，想看的东西倒不必很远。",
+        "02｜雨伞 · 光的收集器\n这把伞今天不挡雨。它把蓝色、珊瑚橙和一点金色接住，撑开时像一场倒着落下的晴天。",
+        "03｜回形针 · 小门的把手\n它暂时不固定纸张，去固定一个入口。门后没有说明书，只留下一点能让好奇心通过的空隙。",
+        "以上为虚构物件展签与 AI 辅助原创视觉。三件展品无需真的拥有新功能，只要允许熟悉的东西暂时离开说明书。"
+      ],
+      "collections": [
+        "daily"
+      ],
+      "featured": false,
+      "source": null,
+      "interaction": null
+    },
+    {
+      "id": "mood-palette",
+      "title": "心情调色盘",
+      "subtitle": "今天是什么颜色？答案可以自己调。",
+      "kind": "original",
+      "category": "aesthetic",
+      "format": "interactive",
+      "tags": [
+        "配色",
+        "感受",
+        "可下载"
+      ],
+      "cover": "assets/curated-aesthetic.jpg",
+      "coverAlt": "抽象色块组成的原创策展配图，用颜色表达不同感受",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "选一个贴近当下的感受词，再把颜色调到自己喜欢的位置。把几种同时存在的感觉，留在同一张小卡上。",
+        "完成后可以下载色彩小卡。这里的颜色与感受关系是创作设定，你可以随时改掉它；它不判断你的心情。"
+      ],
+      "collections": [
+        "wordless"
+      ],
+      "featured": false,
+      "source": null,
+      "interaction": "palette"
+    },
+    {
+      "id": "idea-mixer",
+      "title": "创意碰撞机",
+      "subtitle": "物件、动作、一个小限制。让不相干的东西见面。",
+      "kind": "original",
+      "category": "creative",
+      "format": "interactive",
+      "tags": [
+        "随机",
+        "组合",
+        "灵感"
+      ],
+      "cover": "assets/curated-creative.jpg",
+      "coverAlt": "形状与日常物件组成的原创创意策展配图",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "抽出一个物件、一种动作和一个限制条件，看看这次会发生什么。觉得某个元素有意思，就锁住它，让另外两个继续换。",
+        "碰到喜欢的组合可以复制下来。把它画出来、写成一句话，或暂时留着，不必每个点子都马上有用。"
+      ],
+      "collections": [
+        "daily"
+      ],
+      "featured": false,
+      "source": null,
+      "interaction": "mixer"
+    },
+    {
+      "id": "other-side",
+      "title": "换个位置看故事",
+      "subtitle": "同一件小事，先听这一边，再听另一边。",
+      "kind": "original",
+      "category": "empathy",
+      "format": "interactive",
+      "tags": [
+        "视角",
+        "虚构故事",
+        "理解"
+      ],
+      "cover": "assets/curated-empathy.jpg",
+      "coverAlt": "两个不同视角彼此相望的原创共情策展配图",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "一件发生在日常里的小事，两个人各自知道一部分。点选人物，读完这一边，再换到另一边。",
+        "故事和人物均为虚构。这里没有选出好人或坏人的题目；可以试着想想，如果多知道一句话，你会怎样理解刚才的沉默。"
+      ],
+      "collections": [
+        "perspective"
+      ],
+      "featured": false,
+      "source": null,
+      "interaction": "perspective"
+    },
+    {
+      "id": "patatap",
+      "title": "Patatap",
+      "subtitle": "随手敲几下，声音就长出了形状。",
+      "kind": "curated",
+      "category": "creative",
+      "format": "website",
+      "tags": [
+        "声音",
+        "动画",
+        "即兴"
+      ],
+      "cover": "assets/curated-creative.jpg",
+      "coverAlt": "原创创意策展配图，非 Patatap 界面截图",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图，非原作",
+      "author": "jonobr1 与 Lullatone",
+      "body": [
+        "把键盘或触摸动作变成声音与动态图形，Patatap 让屏幕暂时成为一件可以即兴演奏的乐器。它不要求先认识音符，先动手，节奏会在尝试里出现。",
+        "推荐理由：每一下都有可见、可听的回应。一个简单动作同时连接两种感官，适合留意声音的长短与形状的变化怎样相互配合。",
+        "页面含闪烁画面。对闪光敏感时请跳过；体验前也可以先降低音量。"
+      ],
+      "collections": [
+        "wordless"
+      ],
+      "featured": false,
+      "source": {
+        "url": "https://patatap.com/",
+        "author": "jonobr1 与 Lullatone",
+        "checkedAt": "2026-10-13",
+        "accessNote": "官方页面可读取简介与署名，标注含闪烁画面。互动依赖浏览器脚本与声音；本次核实未完成逐设备触摸、键盘及音频播放测试。"
+      },
+      "interaction": null
+    },
+    {
+      "id": "blob-opera",
+      "title": "Blob Opera",
+      "subtitle": "拖动四位软乎乎的歌手，排练一场自己的歌剧。",
+      "kind": "curated",
+      "category": "creative",
+      "format": "website",
+      "tags": [
+        "AI",
+        "声音",
+        "好玩"
+      ],
+      "cover": "assets/curated-creative.jpg",
+      "coverAlt": "原创创意策展配图，非 Blob Opera 界面截图",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图，非原作",
+      "author": "David Li × Google Arts & Culture",
+      "body": [
+        "四个柔软的小角色组成合唱团。拖动它们会改变音高和元音，模型根据输入组织和声。歌声来自模型对歌剧声乐的学习，不是直接播放歌手的原始录音。",
+        "推荐理由：复杂的声乐合作被转成了能上手的身体动作。听见其余声部跟着你变化的一瞬间，很容易理解为什么一个好界面也可以是一件好玩的作品。"
+      ],
+      "collections": [
+        "wordless"
+      ],
+      "featured": false,
+      "source": {
+        "url": "https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw",
+        "author": "David Li × Google Arts & Culture",
+        "checkedAt": "2026-10-13",
+        "accessNote": "官方介绍和作者署名可读取。实验使用网页音频，官方提示旧设备表现可能受限；嵌入互动未完成音频播放验证，能否加载取决于设备与网络。"
+      },
+      "interaction": null
+    },
+    {
+      "id": "quick-draw",
+      "title": "Quick, Draw!",
+      "subtitle": "二十秒画一个东西，看看机器会猜成什么。",
+      "kind": "curated",
+      "category": "creative",
+      "format": "website",
+      "tags": [
+        "AI",
+        "涂鸦",
+        "小游戏"
+      ],
+      "cover": "assets/curated-creative.jpg",
+      "coverAlt": "原创创意策展配图，非 Quick, Draw! 界面截图",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图，非原作",
+      "author": "Jonas Jongejan、Henry Rowley、Takashi Kawashima、Jongmin Kim、Nick Fox-Gieg，Google Creative Lab 与 Data Arts Team",
+      "body": [
+        "按题目限时涂鸦，神经网络会在你落笔时尝试猜测。画得像不像并不是唯一的乐趣：它猜错的方向，也会暴露我们用几根线代表一个东西时的习惯。",
+        "推荐理由：它把人与机器对形状的不同理解摆在同一张画布上。随意画一轮，再看看最少哪几笔就能让一个对象被认出来。",
+        "官方说明绘画会用于公开的涂鸦数据集。请画题目里的物件，不要写入姓名、联系方式或其他私人信息。"
+      ],
+      "collections": [],
+      "featured": false,
+      "source": {
+        "url": "https://quickdraw.withgoogle.com/",
+        "author": "Jonas Jongejan、Henry Rowley、Takashi Kawashima、Jongmin Kim、Nick Fox-Gieg，Google Creative Lab 与 Data Arts Team",
+        "checkedAt": "2026-10-13",
+        "accessNote": "官方入口的规则、作者名单和数据集说明可读取；实际识别回合未逐项测试。绘画数据处理以原站说明与隐私政策为准。"
+      },
+      "interaction": null
+    },
+    {
+      "id": "dear-data",
+      "title": "Dear Data",
+      "subtitle": "把一周生活画成明信片，寄给另一个人。",
+      "kind": "curated",
+      "category": "aesthetic",
+      "format": "website",
+      "tags": [
+        "手绘",
+        "数据",
+        "日常"
+      ],
+      "cover": "assets/curated-aesthetic.jpg",
+      "coverAlt": "原创审美策展配图，非 Dear Data 明信片复制品",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图，非原作",
+      "author": "Giorgia Lupi 与 Stefanie Posavec",
+      "body": [
+        "两位设计师在一年里逐周记录个人生活，将数据画在明信片上，再跨越大西洋寄给对方。图面之外还有图例，让收信人慢慢读出这些痕迹属于怎样的一周。",
+        "推荐理由：数字没有让人变成分数，反而留下了一个人如何注意生活的线索。值得同时看正面和背面：漂亮的图形背后，是她们各自选择记下什么。"
+      ],
+      "collections": [
+        "daily"
+      ],
+      "featured": false,
+      "source": {
+        "url": "https://www.dear-data.com/theproject",
+        "author": "Giorgia Lupi 与 Stefanie Posavec",
+        "checkedAt": "2026-10-13",
+        "accessNote": "官方项目页可读取作者、52 周交换方式与图例说明。部分作品为图片，加载取决于原站；本站仅提供介绍与原链接，不转载明信片图像。"
+      },
+      "interaction": null
+    },
+    {
+      "id": "silk",
+      "title": "Silk",
+      "subtitle": "让一笔线条，自己织成一片光。",
+      "kind": "curated",
+      "category": "aesthetic",
+      "format": "website",
+      "tags": [
+        "生成艺术",
+        "对称",
+        "绘画"
+      ],
+      "cover": "assets/curated-aesthetic.jpg",
+      "coverAlt": "原创审美策展配图，非 Silk 生成作品",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图，非原作",
+      "author": "Yuri Vishnevsky · 音乐与声音 Mat Jarvis",
+      "body": [
+        "拖动笔触，细线会彼此叠合。颜色混合、镜像和旋转让一个小动作长出复杂结构，像在暗处缓慢铺开一层织物。",
+        "推荐理由：先改变一个条件，再观察画面的差异，很容易看见重复、密度与对称怎样影响观看感受。你不必一开始就知道自己要画成什么。"
+      ],
+      "collections": [
+        "wordless"
+      ],
+      "featured": false,
+      "source": {
+        "url": "https://weavesilk.com/",
+        "author": "Yuri Vishnevsky · 音乐与声音 Mat Jarvis",
+        "checkedAt": "2026-10-13",
+        "accessNote": "官方页面的作者、声音署名、镜像与颜色控制说明可读取。画布依赖脚本，保存图片操作未逐浏览器测试；作品使用许可请查看原站具体条款。"
+      },
+      "interaction": null
+    },
+    {
+      "id": "kandinsky",
+      "title": "Chrome Music Lab · Kandinsky",
+      "subtitle": "把画面当作一次声音实验。",
+      "kind": "curated",
+      "category": "aesthetic",
+      "format": "website",
+      "tags": [
+        "声音",
+        "线条",
+        "跨感官"
+      ],
+      "cover": "assets/curated-aesthetic.jpg",
+      "coverAlt": "原创审美策展配图，非 Kandinsky 实验界面或画作",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图，非原作",
+      "author": "Google Creative Lab（Chrome Music Lab）",
+      "body": [
+        "Chrome Music Lab 用动手尝试来探索音乐。Kandinsky 是其中连接绘画与声音的一个入口，把线条和形状带进可以听见的画面。",
+        "推荐理由：当画面有了声音，留白、重复和大小就多了一种观察方式。可以先放下“画得好看”的目标，留意一个简单改变带来了什么。",
+        "这里链接的是 Chrome Music Lab 中的 Kandinsky，和 Google Arts & Culture 的 Play a Kandinsky 是不同项目。"
+      ],
+      "collections": [
+        "wordless"
+      ],
+      "featured": false,
+      "source": {
+        "url": "https://musiclab.chromeexperiments.com/Kandinsky/",
+        "author": "Google Creative Lab（Chrome Music Lab）",
+        "checkedAt": "2026-10-13",
+        "accessNote": "核实 Chrome Music Lab 官方系列署名及无需账号的说明。当前文本抓取返回浏览器兼容提示与未展开模板，未验证此单项的声音播放；建议用支持网页音频的现代浏览器打开，网络可用性以实际加载为准。"
+      },
+      "interaction": null
+    },
+    {
+      "id": "trust",
+      "title": "The Evolution of Trust",
+      "subtitle": "在几轮选择里，观察合作怎样出现，也怎样消失。",
+      "kind": "curated",
+      "category": "empathy",
+      "format": "website",
+      "tags": [
+        "互动解释",
+        "信任",
+        "博弈"
+      ],
+      "cover": "assets/curated-empathy.jpg",
+      "coverAlt": "原创共情策展配图，非 The Evolution of Trust 游戏画面",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图，非原作",
+      "author": "Nicky Case",
+      "body": [
+        "通过一次次投入、合作或欺骗的选择，这个互动解释让你观察不同策略在重复相遇中发生的变化。作者标注体验约需三十分钟，并提供多种语言版本的入口。",
+        "推荐理由：它把抽象规则变成看得见的后果，也让“再见一次”和“可能误会”成为问题的一部分。游戏模型适合帮助提问，不足以概括现实中所有人的处境。"
+      ],
+      "collections": [
+        "perspective"
+      ],
+      "featured": false,
+      "source": {
+        "url": "https://ncase.me/trust/",
+        "author": "Nicky Case",
+        "checkedAt": "2026-10-13",
+        "accessNote": "官方入口可读取语言链接，官方 words.html 可核实作者、规则与约 30 分钟说明。主互动依赖脚本，未逐步通关；翻译由各贡献者维护，体验前可从原站选择语言。"
+      },
+      "interaction": null
+    },
+    {
+      "id": "window-swap",
+      "title": "WindowSwap",
+      "subtitle": "借一个人的窗，安静看一会儿他的日常。",
+      "kind": "curated",
+      "category": "empathy",
+      "format": "website",
+      "tags": [
+        "窗外",
+        "慢观看",
+        "远方"
+      ],
+      "cover": "assets/curated-empathy.jpg",
+      "coverAlt": "原创共情策展配图，非 WindowSwap 用户窗景视频截图",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图，非原作",
+      "author": "Sonali Ranjit 与 Vaishnav Balasubramaniam",
+      "body": [
+        "人们提交从自己窗边拍摄的风景视频，让另一处的人短暂停留在这个视角里。看的是贡献者录下的片段，不应当作实时摄像头或此刻的天气。",
+        "推荐理由：窗框把宏大的“世界”缩成一个能坐下来看的角度。没有讲解时，树影、建筑和环境声音也能传来某种普通生活的节奏。"
+      ],
+      "collections": [
+        "perspective"
+      ],
+      "featured": false,
+      "source": {
+        "url": "https://www.window-swap.com/",
+        "author": "Sonali Ranjit 与 Vaishnav Balasubramaniam",
+        "checkedAt": "2026-10-13",
+        "accessNote": "主入口为脚本页面，本次未取得可读正文或验证视频播放。创始人与录制视频的参与方式由项目团队官方 About 页核实；当前登录、付费功能及地区播放条件未核实，请以原站显示为准。"
+      },
+      "interaction": null
+    },
+    {
+      "id": "radio-garden",
+      "title": "Radio Garden",
+      "subtitle": "转一下地球，听见别处正在播放的声音。",
+      "kind": "curated",
+      "category": "empathy",
+      "format": "website",
+      "tags": [
+        "广播",
+        "地球",
+        "聆听"
+      ],
+      "cover": "assets/curated-empathy.jpg",
+      "coverAlt": "原创共情策展配图，非 Radio Garden 地球界面截图",
+      "coverCredit": "有感编辑部 · AI 辅助原创策展配图，非原作",
+      "author": "Studio Puckey 与 Moniker（原始项目）",
+      "body": [
+        "把在线广播放到可转动的地球上，Radio Garden 让选台变成一次按地点展开的探索。不同地方的节目、音乐和人声，在同一个界面里相遇。",
+        "推荐理由：远方不只有景观，也有普通的一天正在发声。试着停在一个不熟悉的地方，先听一会儿，再决定要不要换台。广播的一段声音只能代表一个片刻，不等同于整个地方。"
+      ],
+      "collections": [
+        "perspective"
+      ],
+      "featured": false,
+      "source": {
+        "url": "https://radio.garden/",
+        "author": "Studio Puckey 与 Moniker（原始项目）",
+        "checkedAt": "2026-10-13",
+        "accessNote": "主入口仅返回启用 JavaScript 的提示，未验证任何电台流。原始项目作者与地球探索方式由共同创作者 Moniker 的项目页核实；电台可播放性、地区限制与现有收费选项以原站为准。"
+      },
+      "interaction": null
+    }
+  ],
+  "collections": [
+    {
+      "id": "daily",
+      "title": "把日常看陌生",
+      "description": "盐罐、纸页、旧钥匙和一块空白广告牌。换一点点观察角度，熟悉的东西就开始讲新故事。",
+      "cover": "assets/shadow-ad.jpg",
+      "itemIds": [
+        "salty-dinner",
+        "shadow-ad",
+        "moon-library",
+        "wrong-use-museum",
+        "idea-mixer",
+        "dear-data"
+      ]
+    },
+    {
+      "id": "wordless",
+      "title": "不用语言也能表达",
+      "description": "让颜色、声音、形状和空白接过话筒。有些感受可以先被看见、被听见，再慢慢找到名字。",
+      "cover": "assets/curated-aesthetic.jpg",
+      "itemIds": [
+        "wide-table",
+        "shadow-ad",
+        "mood-palette",
+        "patatap",
+        "blob-opera",
+        "silk",
+        "kandinsky"
+      ]
+    },
+    {
+      "id": "perspective",
+      "title": "换个位置看世界",
+      "description": "一封给朋友的信、另一个人的窗、一段陌生的广播。多看见一点信息，不急着替眼前的人下结论。",
+      "cover": "assets/last-box.jpg",
+      "itemIds": [
+        "last-box",
+        "wide-table",
+        "other-side",
+        "trust",
+        "window-swap",
+        "radio-garden"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "look-closer",
+      "title": "美，有时候只是少解释一句。",
+      "category": "审美手记",
+      "body": [
+        "一句话已经让人看见的东西，下一句未必需要再替它总结。读到一片叶子的影子落在广告牌上，我们可以先看光、看形状，也可以只觉得这个巧合有趣。",
+        "审美不是给作品宣布一个高低。它更像辨认选择：这里为什么停顿，那里为什么留空，颜色为什么只出现一小块。把这些选择说具体，比说一句“很高级”更有帮助。",
+        "试试把你写过的一段话删掉最后一句。读一遍，再放回来。哪一版更接近你想表达的感受？没有唯一正确答案。"
+      ]
+    },
+    {
+      "id": "strange-everyday",
+      "title": "让熟悉的东西，短暂地陌生。",
+      "category": "创意手记",
+      "body": [
+        "杯子通常用来喝水。如果今天它负责收集回声呢？一个小小的用途变化，就能把熟悉的物件重新打开。",
+        "好的变体不只是换个形容词。可以换观察者、换讲述顺序、换物件承担的作用。先守住一个念头，再让形式走远一点。",
+        "在桌上找一件东西，给它一个今天不必完成的任务。你可以画出来、写一句话，或者只是带着这个问题继续过一天。"
+      ]
+    },
+    {
+      "id": "another-position",
+      "title": "另一种视角，不是另一种判决。",
+      "category": "共情手记",
+      "body": [
+        "同一件小事，站在不同位置的人可能知道不同的信息。没有告别，可能是赶时间，也可能是不知道怎么开口；我们看到的动作，不等于完整的原因。",
+        "共情可以先从保留一个空位开始。给快乐留位置，也给犹豫、不喜欢、说不清的矛盾留位置。不必马上把它们改写成成长。",
+        "试着把一次无伤大雅的误会从两个人的视角各写三句。只写他们知道的事情。看看哪些空白让你更愿意继续听。"
+      ]
+    }
+  ]
+}

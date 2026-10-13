@@ -1,4 +1,0 @@
-interface:
-  display_name: "有感 · yougan"
-  short_description: "从真实感受出发，用审美、创意与共情打磨文字作品和视觉表达方案"
-  default_prompt: "使用 $yougan，把我提供的一段日常感受变成有个人语气的作品，保留具体细节。"

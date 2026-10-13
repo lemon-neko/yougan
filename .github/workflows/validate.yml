@@ -1,14 +1,15 @@
-name: Validate yougan
+name: Validate yougan platform
 on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  content:
+  content-and-site:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.12'
-      - run: python3 tests/validate_project.py
-      - run: python3 -m unittest discover -s tests -p 'test_*.py'
+          node-version: '22'
+      - run: node --check web/core.js && node --check web/app.js
+      - run: node --test tests/*.test.mjs
+      - run: node scripts/build.mjs
