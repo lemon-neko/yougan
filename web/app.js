@@ -1,9 +1,11 @@
+import {resetMotion,revealOnScroll,animateGallery,moveFilterIndicator} from './motion.js';
 import {CATEGORY,FORMAT,FEELINGS,filterItems,randomOther,createSavedStore,remix,rotatePalette,parseRoute} from './core.js';
 const main=document.querySelector('main');
 const e=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const url=value=>{try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:'#/sources';}catch{return '#/sources';}};
 let catalog,saved,route,filters={},toastTimer,palette=[...FEELINGS['轻快']],feeling='轻快',mix=remix(),locks={},perspective='a';
 let viewedPerspectives=new Set();
+let libraryFilter='all',libraryCategory='',libraryQuery='';
 function toast(text){const el=document.querySelector('#toast');el.textContent=text;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3200);}
 function empty(title,description,link='#/discover',label='去发现一些好东西'){return `<section class="empty"><h2>${e(title)}</h2><p>${e(description)}</p><a class="button" href="${e(link)}">${e(label)} <span aria-hidden="true">↗</span></a></section>`;}
 function image(item,eager=false){return `<div class="image-shell"><img src="${e(item.cover)}" alt="${e(item.coverAlt)}" loading="${eager?'eager':'lazy'}" decoding="async" ${eager?'fetchpriority="high"':''}></div>`;}
@@ -13,15 +15,25 @@ function card(item,style='content-card',eager=false){return `<article class="${s
 function collectionCard(c){return `<article class="collection-card"><a class="card-link" href="#/collection/${e(c.id)}"><div class="image-shell"><img src="${e(c.cover)}" alt="${e(c.title)}专题配图" loading="lazy" decoding="async"></div><h3>${e(c.title)}</h3></a><p>${e(c.description)}</p><small>${c.itemIds.length} 个发现 <span aria-hidden="true">↗</span></small></article>`;}
 function top(title,description,action=''){return `<div class="page-top"><div><h1>${e(title)}</h1>${description?`<p>${e(description)}</p>`:''}</div>${action}</div>`;}
 function countSaved(){document.querySelector('#saved-count').textContent=saved.all().length||'';}
+function libraryCard(item,index=0){return `<article class="library-card" data-item-id="${e(item.id)}" style="--card-order:${Math.min(index,7)}"><a class="card-link library-preview" href="#/item/${e(item.id)}">${image(item,index<4)}<span class="preview-open" aria-hidden="true">打开这个发现 ↗</span></a><div class="library-caption"><div><h3><a href="#/item/${e(item.id)}">${e(item.title)}</a></h3><p>${CATEGORY[item.category]} · ${FORMAT[item.format]||e(item.format)}</p></div>${saveButton(item)}</div></article>`;}
+function libraryItems(){const order=['wrong-use-museum','moon-library','blob-opera','wide-table','salty-dinner','shadow-ad','last-box','dear-data','mood-palette','trust','silk','idea-mixer','other-side','patatap','quick-draw','kandinsky','window-swap','radio-garden'];return filterItems(catalog.items,{q:libraryQuery,category:libraryCategory,kind:['original','curated'].includes(libraryFilter)?libraryFilter:'',format:libraryFilter==='interactive'?'interactive':''}).sort((a,b)=>order.indexOf(a.id)-order.indexOf(b.id));}
+function renderLibrary(){
+ const target=document.querySelector('#library-results');if(!target)return;
+ const items=libraryItems();
+ document.querySelector('#library-count').textContent=`${items.length} 个发现`;
+ document.querySelectorAll('[data-library-filter]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.libraryFilter===libraryFilter));
+ const previous=new Map([...target.children].map(el=>[el.dataset.itemId,el.getBoundingClientRect()]));
+ const hadContent=target.children.length>0;
+ target.innerHTML=items.length?items.map((i,n)=>libraryCard(i,n)).join(''):`<section class="empty library-empty"><h2>这个念头，还没被收集到。</h2><p>换一个词，或者试着清除筛选。</p><button class="button secondary" data-library-reset>清除筛选</button></section>`;
+ moveFilterIndicator(document.querySelector('.library-tabs'));
+ if(hadContent)animateGallery(target,previous);else revealOnScroll(target);
+}
 function home(){
-  const items=catalog.items;const feature=items.find(i=>i.id==='wrong-use-museum')||items[0];
-  const secondary=items.find(i=>i.id==='blob-opera')||items[1];
-  const gallery=items.filter(i=>!['wrong-use-museum','blob-opera'].includes(i.id)).slice(0,9);
-  return `<div class="page-top home-top"><div><p class="eyebrow">创意、审美，还有一点共鸣</p><h1>把好奇心，放出来。</h1><p>收集有趣的创意、值得停留的美和让人共鸣的瞬间。</p></div><button class="button secondary" data-random>随便逛逛 <span aria-hidden="true">↗</span></button></div>
-  <section class="home-showcase" aria-label="编辑精选">${card(feature,'feature-card',true)}<div class="side-stack">${card(secondary,'side-feature',true)}<a class="mini-play" href="#/item/mood-palette"><small>给今天留一种颜色</small><div><h3>心情不一定<br>要用语言说。</h3><p>挑一组颜色，带走一张属于今天的小卡片。</p></div><span class="play-stamp" aria-hidden="true">✳</span></a></div></section>
-  <nav class="entry-links" aria-label="内容分类"><span class="entry-caption">从哪里开始？</span>${Object.entries(CATEGORY).map(([key,label])=>`<a href="#/discover?category=${key}">${label} <span aria-hidden="true">↗</span></a>`).join('')}</nav>
-  <section><div class="section-top"><h2>一些值得停下来的东西</h2><a class="text-link" href="#/discover">看全部 <span aria-hidden="true">↗</span></a></div><div class="masonry">${gallery.map(i=>card(i)).join('')}</div></section>
-  <section><div class="section-top"><h2>沿着一个念头，继续逛</h2><a class="text-link" href="#/collections">全部专题 <span aria-hidden="true">↗</span></a></div><div class="collections-grid">${catalog.collections.map(collectionCard).join('')}</div></section>`;
+ const tabs={all:'全部发现',original:'有感原创',curated:'外部精选',interactive:'可以玩'};
+ return `<section class="motion-hero" aria-labelledby="home-title"><p class="hero-kicker">给好奇心，一点新的可能</p><h1 id="home-title">发现有趣的创意，<br><span class="gradient-word">遇见有感的瞬间。</span></h1><p class="hero-description">一个收集创意、审美与共情的地方。<br class="mobile-break">随意看看，也可以动手玩一下。</p><div class="hero-actions"><button class="hero-random" data-random>随便逛逛 <span aria-hidden="true">↗</span></button><a href="#/play" class="hero-play">先玩一下 <span aria-hidden="true">→</span></a></div></section>
+ <section class="library" aria-label="发现作品"><div class="library-toolbar"><div class="library-tabs" aria-label="内容来源筛选"><span class="filter-indicator" aria-hidden="true"></span>${Object.entries(tabs).map(([id,label])=>`<button data-library-filter="${id}" aria-pressed="${id===libraryFilter}">${label}</button>`).join('')}</div><div class="library-tools"><label class="library-search"><span aria-hidden="true">⌕</span><input type="search" name="library-q" value="${e(libraryQuery)}" placeholder="找一点灵感" aria-label="搜索作品库"></label><select name="library-category" aria-label="筛选作品栏目"><option value="">全部栏目</option>${Object.entries(CATEGORY).map(([id,label])=>`<option value="${id}" ${id===libraryCategory?'selected':''}>${label}</option>`).join('')}</select></div></div><div class="library-subline"><span>值得停下来的好东西</span><span id="library-count" role="status"></span></div><div id="library-results" class="library-grid"></div></section>
+ <a class="motion-play-banner" href="#/play"><div><p>THINK LESS. PLAY MORE.</p><h2>先玩一下，<br>想法就来了。</h2><span class="button">打开三个小实验 <span aria-hidden="true">↗</span></span></div><div class="banner-art"><img src="assets/curated-creative.jpg" alt="形状和颜色相互碰撞的有感原创策展插画" loading="lazy" decoding="async"></div></a>
+ <section class="motion-collections"><div class="section-top"><div><p class="eyebrow">沿着一个念头，继续逛</p><h2>把喜欢的东西，放在一起。</h2></div><a class="text-link" href="#/collections">全部专题 ↗</a></div><div class="collections-grid">${catalog.collections.map(collectionCard).join('')}</div></section>`;
 }
 function discover(){
   filters={q:route.params.get('q')||'',category:route.params.get('category')||'',kind:route.params.get('kind')||'',format:route.params.get('format')||''};
@@ -73,11 +85,12 @@ function sources(){return `<article class="article-page"><h1>每个发现，都�
 function render(focus=false){
   route=parseRoute(location.hash);let markup;
   switch(route.page){case 'home':markup=home();break;case 'discover':markup=discover();break;case 'item':markup=detail(route.id);break;case 'collections':markup=collections();break;case 'collection':markup=collection(route.id);break;case 'play':markup=play();break;case 'saved':markup=savedPage();break;case 'about':markup=about();break;case 'sources':markup=sources();break;case 'article':markup=article(route.id);break;default:markup=empty('这个路口，还没有东西。','回到发现页，换条路继续逛。');}
-  main.innerHTML=markup;main.classList.remove('reveal');void main.offsetWidth;main.classList.add('reveal');
+  resetMotion();main.innerHTML=markup;main.classList.remove('reveal');void main.offsetWidth;main.classList.add('reveal');
   const title=route.page==='item'?catalog.items.find(i=>i.id===route.id)?.title:({discover:'发现',collections:'专题',play:'玩一下',saved:'我的收藏',about:'关于',sources:'来源说明'}[route.page]);document.title=title?`${title} · 有感`:'有感 · 收集好奇，也收集共鸣';
   document.querySelectorAll('[data-nav]').forEach(a=>{const active=a.dataset.nav===route.page||(route.page==='collection'&&a.dataset.nav==='collections');a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  if(route.page==='home')renderLibrary();
   if(route.page==='discover'){results();if(route.params.has('focus'))document.querySelector('#search-input').focus();}
-  drawPalette();drawMixer();drawPerspective();countSaved();
+  drawPalette();drawMixer();drawPerspective();countSaved();revealOnScroll(main);
   if(focus){window.scrollTo({top:0,behavior:'instant'});if(!route.params.has('focus'))main.focus({preventScroll:true});}
 }
 async function copy(text,success){try{await navigator.clipboard.writeText(text);toast(success);}catch{const target=document.querySelector('#share-fallback')||document.querySelector('.interaction');if(target){let field=document.querySelector('#copy-fallback');if(!field){field=document.createElement('input');field.id='copy-fallback';field.className='share-field';field.readOnly=true;field.setAttribute('aria-label','可手动复制的内容');target.append(field);}field.value=text;field.focus();field.select();toast('已选中内容，可以手动复制。');}}}
@@ -87,6 +100,8 @@ function downloadPalette(){
 main.addEventListener('click',async event=>{
   const b=event.target.closest('button');if(!b)return;
   if(b.hasAttribute('data-retry')){load();return;}
+  if(b.hasAttribute('data-library-filter')){libraryFilter=b.dataset.libraryFilter;renderLibrary();return;}
+  if(b.hasAttribute('data-library-reset')){libraryFilter='all';libraryCategory='';libraryQuery='';document.querySelector('[name="library-q"]').value='';document.querySelector('[name="library-category"]').value='';renderLibrary();return;}
   if(b.dataset.save){const item=catalog.items.find(i=>i.id===b.dataset.save);if(!item)return;const selected=saved.toggle(item.id);document.querySelectorAll('[data-save]').forEach(btn=>{if(btn.dataset.save!==item.id)return;btn.setAttribute('aria-pressed',selected);btn.textContent=btn.classList.contains('save-button')?(selected?'♥':'♡'):(selected?'已收藏 ♥':'收藏这个发现 ♡');if(btn.classList.contains('save-button'))btn.setAttribute('aria-label',(selected?'取消收藏':'收藏')+item.title);});countSaved();toast(saved.available?(selected?'已收藏，留给下一次。':'已取消收藏。'):'当前浏览器无法持久保存，收藏暂存在本次页面。');if(route.page==='saved'){main.innerHTML=savedPage();}return;}
   if(b.hasAttribute('data-clear')){saved.clear();main.innerHTML=savedPage();countSaved();toast('收藏已清空。');return;}
   if(b.hasAttribute('data-random')){const item=randomOther(catalog.items,route.page==='item'?route.id:'');if(item)location.hash=`/item/${item.id}`;return;}
@@ -103,8 +118,8 @@ main.addEventListener('click',async event=>{
 });
 main.addEventListener('keydown',event=>{if(event.target.matches('[data-perspective]')&&['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();perspective=event.key==='Home'?'a':event.key==='End'?'b':perspective==='a'?'b':'a';drawPerspective();document.querySelector(`[data-perspective="${perspective}"]`).focus();}});
 main.addEventListener('submit',event=>{if(event.target.id==='filter-form')event.preventDefault();});
-main.addEventListener('input',event=>{if(event.target.name==='q'){filters.q=event.target.value;results();}if(event.target.hasAttribute('data-color')){palette[Number(event.target.dataset.color)]=event.target.value;const output=document.querySelector('#palette-output').children[Number(event.target.dataset.color)];output.style.background=event.target.value;output.querySelector('span').textContent=event.target.value.toUpperCase();}});
-main.addEventListener('change',event=>{if(['kind','format'].includes(event.target.name)){filters[event.target.name]=event.target.value;results();}});
+main.addEventListener('input',event=>{if(event.target.name==='library-q'){libraryQuery=event.target.value;renderLibrary();return;}if(event.target.name==='q'){filters.q=event.target.value;results();}if(event.target.hasAttribute('data-color')){palette[Number(event.target.dataset.color)]=event.target.value;const output=document.querySelector('#palette-output').children[Number(event.target.dataset.color)];output.style.background=event.target.value;output.querySelector('span').textContent=event.target.value.toUpperCase();}});
+main.addEventListener('change',event=>{if(event.target.name==='library-category'){libraryCategory=event.target.value;renderLibrary();return;}if(['kind','format'].includes(event.target.name)){filters[event.target.name]=event.target.value;results();}});
 main.addEventListener('error',event=>{if(event.target.tagName==='IMG'){const img=event.target;const fallback=document.createElement('div');fallback.className='broken-image';fallback.setAttribute('role','img');fallback.setAttribute('aria-label',img.alt);fallback.textContent='配图暂时没有打开';img.replaceWith(fallback);}},true);
 window.addEventListener('hashchange',()=>{if(catalog)render(true);});
 document.querySelector('.skip').addEventListener('click',event=>{event.preventDefault();main.focus();main.scrollIntoView();});
