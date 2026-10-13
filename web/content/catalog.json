@@ -622,5 +622,42 @@
         "试着把一次无伤大雅的误会从两个人的视角各写三句。只写他们知道的事情。看看哪些空白让你更愿意继续听。"
       ]
     }
+  ],
+  "experiments": [
+    {
+      "id": "thought-cloud",
+      "effect": "cloud",
+      "title": "念头成云",
+      "subtitle": "蓝色粒子，慢慢聚成一个念头。",
+      "hint": "移动鼠标，换个角度看这片粒子云。触屏上可轻触拖动。",
+      "description": "粒子聚成云冠与细长的树干，底部的涟漪慢慢扩散。没有标准形状，你可以把它看成树、云，或者一个刚刚出现的念头。",
+      "credit": "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的粒子作品，未使用其源码或素材。"
+    },
+    {
+      "id": "quiet-sphere",
+      "effect": "sphere",
+      "title": "一颗安静的星球",
+      "subtitle": "没有大陆，只有绕行的微光。",
+      "hint": "移动鼠标或轻触拖动，让点阵球朝不同方向转动。",
+      "description": "一千多个光点在虚构球面上缓缓绕行。远处的点暗一点，近处的点亮一点，空间感来自这些很小的差别。暂停后，也可以从另一个方向观察。",
+      "credit": "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的点阵球，未使用其源码或素材。"
+    },
+    {
+      "id": "orbit-gallery",
+      "effect": "gallery",
+      "title": "绕着好奇心转",
+      "subtitle": "让作品离开墙面，漂浮在空间里。",
+      "hint": "移动鼠标或轻触拖动，改变漂浮画廊的观察角度。",
+      "description": "从有感作品里取出几幅图，让它们在同一条轨道上缓缓经过。图片时而靠近、时而转向侧面，熟悉的作品也会产生陌生的关系。",
+      "credit": "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的空间画廊；配图均为有感已有 AI 辅助原创插画。",
+      "images": [
+        "assets/moon-library.jpg",
+        "assets/wrong-use-museum.jpg",
+        "assets/shadow-ad.jpg",
+        "assets/curated-empathy.jpg",
+        "assets/curated-creative.jpg",
+        "assets/salty-dinner.jpg"
+      ]
+    }
   ]
 }
