@@ -10,6 +10,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --check web/core.js && node --check web/app.js
+      - run: for file in web/*.js; do node --check "$file" || exit 1; done
       - run: node --test tests/*.test.mjs
       - run: node scripts/build.mjs

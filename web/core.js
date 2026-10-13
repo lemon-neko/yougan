@@ -1,5 +1,5 @@
 export const CATEGORY = {creative: '有趣创意', aesthetic: '审美发现', empathy: '共情时刻'};
-export const FORMAT = {poem:'诗',letter:'短笺',poster:'海报',photo:'视觉作品',comic:'插画故事',exhibition:'小展览',interactive:'互动',website:'网站'};
+export const FORMAT = {poem:'诗',letter:'短笺',poster:'海报',photo:'视觉作品',comic:'插画故事',exhibition:'小展览',interactive:'互动',motion:'动态作品',website:'网站'};
 export const FEELINGS = {
   '轻快': ['#f56950','#ffcc45','#4164d9','#f4efe3'],
   '安静': ['#67877d','#c1ccc3','#ece7da','#374b55'],
@@ -49,3 +49,6 @@ export function parseRoute(hash) {
   const parts=path.split('/').filter(Boolean);
   return {page:parts[0]||'home',id:parts[1]||'',params:new URLSearchParams(search)};
 }
+
+export function getEntries(catalog){return [...catalog.items,...(catalog.experiments||[])];}
+export function entryHref(item){return `#/${item.effect?'motion':'item'}/${item.id}`;}

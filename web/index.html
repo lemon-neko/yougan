@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#121212">
-  <meta name="description" content="有感：收集有趣的创意、值得停留的美和让人共鸣的瞬间。发现原创作品、精选网站，玩一场小小的创意实验。">
+  <meta name="description" content="有感：收集有趣的创意、值得停留的美和让人共鸣的瞬间。跟着一条流动的作品流，遇见树影、小诗、故事与可亲手改变的想象。">
   <meta property="og:title" content="有感 · yougan">
-  <meta property="og:description" content="收集好奇，也收集共鸣。一个打开就能逛的创意游乐场。">
+  <meta property="og:description" content="让灵感流动，让作品说话。原创动画、轻互动与不同视角在这里相遇。">
   <meta property="og:type" content="website">
-  <title>有感 · 收集好奇，也收集共鸣</title>
+  <title>有感 · 让灵感流动，让作品说话</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="scenes.css">
   <script type="module" src="app.js"></script>
 </head>
 <body>
@@ -18,17 +19,17 @@
   <header class="site-header">
     <a class="brand" href="#/" aria-label="有感首页">有感<span>yougan</span></a>
     <nav aria-label="主要导航">
-      <a href="#/discover" data-nav="discover">发现</a>
-      <a href="#/collections" data-nav="collections">专题</a>
+      <a href="#/" data-nav="home">作品流</a><a href="#/discover" data-nav="discover">发现</a>
+
       <a href="#/play" data-nav="play">玩一下<span class="nav-spark" aria-hidden="true">↗</span></a>
-      <a href="#/saved" data-nav="saved">我的收藏<span id="saved-count"></span></a>
+      <a href="#/saved" data-nav="saved">收藏<span id="saved-count"></span></a>
     </nav>
-    <a href="#/discover?focus=search" class="header-search" aria-label="搜索内容">搜索 <span aria-hidden="true">⌕</span></a>
+    <button class="global-pause" data-global-pause aria-pressed="false">暂停动态</button>
   </header>
   <main id="main" tabindex="-1"><div class="loading" role="status"><span class="loading-shape"></span>正在打开一些好东西…</div></main>
   <footer class="site-footer">
     <div class="footer-brand">有感<span>把好奇心带回日常。</span></div>
-    <div><a href="#/about">关于有感</a><a href="#/sources">来源说明</a><a href="https://github.com/lemon-neko/yougan/issues/new/choose" target="_blank" rel="noopener noreferrer">分享一个发现 ↗</a></div>
+    <div><a href="#/collections">专题</a><a href="#/about">关于有感</a><a href="#/sources">来源说明</a><a href="https://github.com/lemon-neko/yougan/issues/new/choose" target="_blank" rel="noopener noreferrer">分享一个发现 ↗</a></div>
     <p>有趣的创意 · 值得停留的美 · 让人共鸣的瞬间</p>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>

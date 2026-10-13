@@ -9,7 +9,7 @@ try {
  const manifest=JSON.parse(await readFile(path.join(root,'web/content/site.json'),'utf8'));
  if(manifest.url){
   const base=new URL(manifest.url).origin;
-  html=html.replace('</head>',`  <meta property="og:url" content="${base}/">\n  <meta property="og:image" content="${base}/assets/wrong-use-museum.jpg">\n</head>`);
+  html=html.replace('</head>',`  <meta property="og:url" content="${base}/">\n  <meta property="og:image" content="${base}/assets/shadow-ad.jpg">\n</head>`);
  }
 } catch(error){if(error.code!=='ENOENT')throw error;}
 await writeFile(path.join(root,'dist/index.html'),html);

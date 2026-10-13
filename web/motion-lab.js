@@ -40,7 +40,7 @@ function drawParticles(s,time){
   const sphere=type==='sphere',yaw=time*(sphere?.15:.08)+pointer.x*.45,pitch=pointer.y*.25;
   if(!sphere){
     ctx.save();ctx.translate(w/2,h*.81);ctx.scale(1,.2);
-    for(let i=0;i<5;i++){ctx.beginPath();ctx.arc(0,0,Math.min(w,h)*(.19+i*.09)+Math.sin(time+i)*3,0,Math.PI*2);ctx.strokeStyle=`rgba(68,98,255,${.22-i*.025})`;ctx.lineWidth=1;ctx.stroke();}ctx.restore();
+    for(let i=0;i<5;i++){ctx.beginPath();ctx.arc(0,0,Math.max(1,Math.min(w,h)*(.19+i*.09)+Math.sin(time+i)*3),0,Math.PI*2);ctx.strokeStyle=`rgba(68,98,255,${.22-i*.025})`;ctx.lineWidth=1;ctx.stroke();}ctx.restore();
     const glow=ctx.createRadialGradient(w/2,h*.4,0,w/2,h*.4,Math.min(w,h)*.44);glow.addColorStop(0,'#1233b32b');glow.addColorStop(1,'#09090c00');ctx.fillStyle=glow;ctx.fillRect(0,0,w,h);
     ctx.globalCompositeOperation='lighter';
   }
@@ -63,6 +63,7 @@ function drawParticles(s,time){
 export function mountLab(root,catalog){
   stopLab();intensity=1;const canvases=[...root.querySelectorAll('[data-motion-canvas]')];if(!canvases.length)return;
   let frame=0,last=0,time=0,dead=false;const cleanups=[];
+  const eligible=s=>s.visible&&(!s.canvas.closest('[data-motion-interval]')||s.canvas.closest('[data-motion-interval]').dataset.active==='true');
   const states=canvases.map(canvas=>{
     const ctx=canvas.getContext('2d');if(!ctx){canvas.replaceWith(Object.assign(document.createElement('p'),{textContent:'当前浏览器暂不支持动态画布。'}));return null;}
     const type=canvas.dataset.motionCanvas;
@@ -74,7 +75,7 @@ export function mountLab(root,catalog){
     }):base;
     const s={canvas,ctx,type,points,w:1,h:1,visible:false,pointer:{x:0,y:0},target:{x:0,y:0},images:[]};
     if(type==='gallery')s.images=catalog.experiments.find(e=>e.id==='orbit-gallery').images.map(src=>{const img=new Image();img.onload=()=>{draw(s);};img.src=src;return img;});
-    const size=()=>{const r=canvas.getBoundingClientRect();s.w=r.width;s.h=r.height;const dpr=Math.min(window.devicePixelRatio||1,1.75);canvas.width=Math.round(s.w*dpr);canvas.height=Math.round(s.h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);draw(s);};
+    const size=()=>{const r=canvas.getBoundingClientRect();if(r.width<2||r.height<2)return;s.w=r.width;s.h=r.height;const dpr=Math.min(window.devicePixelRatio||1,1.75);canvas.width=Math.round(s.w*dpr);canvas.height=Math.round(s.h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);draw(s);};
     const move=event=>{const r=canvas.getBoundingClientRect();s.target={x:(event.clientX-r.left)/r.width*2-1,y:(event.clientY-r.top)/r.height*2-1};if(blocked()){s.pointer={...s.target};draw(s);}};
     const leave=()=>{s.target={x:0,y:0};};
     canvas.addEventListener('pointermove',move);canvas.addEventListener('pointerleave',leave);
@@ -84,13 +85,13 @@ export function mountLab(root,catalog){
   function draw(s){if(dead)return;s.ctx.clearRect(0,0,s.w,s.h);s.ctx.fillStyle='#08080b';s.ctx.fillRect(0,0,s.w,s.h);if(s.type==='gallery')drawGallery(s,time);else drawParticles(s,time);}
   function blocked(){return paused||reduced.matches||document.hidden;}
   function tick(now){frame=0;if(dead||blocked())return;const dt=last?Math.min((now-last)/1000,.04):0;last=now;time+=dt*intensity;
-    for(const s of states)if(s.visible){s.pointer.x+=(s.target.x-s.pointer.x)*.055;s.pointer.y+=(s.target.y-s.pointer.y)*.055;draw(s);}
-    if(states.some(s=>s.visible))frame=requestAnimationFrame(tick);
+    for(const s of states)if(eligible(s)){s.pointer.x+=(s.target.x-s.pointer.x)*.055;s.pointer.y+=(s.target.y-s.pointer.y)*.055;draw(s);}
+    if(states.some(eligible))frame=requestAnimationFrame(tick);
   }
-  function update(){cancelAnimationFrame(frame);frame=0;last=0;root.querySelectorAll('[data-lab-pause]').forEach(b=>{b.setAttribute('aria-pressed',String(paused));b.textContent=paused?'继续播放':'暂停动态';});if(!blocked()&&states.some(s=>s.visible))frame=requestAnimationFrame(tick);}
+  function update(){cancelAnimationFrame(frame);frame=0;last=0;states.forEach(s=>s.canvas.dataset.animationState=blocked()?'paused':eligible(s)?'playing':'offscreen');root.querySelectorAll('[data-lab-pause]').forEach(b=>{b.setAttribute('aria-pressed',String(paused||reduced.matches));b.textContent=reduced.matches?'静态观看':paused?'继续播放':'暂停动态';b.disabled=reduced.matches;});if(!blocked()&&states.some(eligible))frame=requestAnimationFrame(tick);}
   const observer=new IntersectionObserver(entries=>{for(const entry of entries){const s=states.find(s=>s.canvas===entry.target);if(s)s.visible=entry.isIntersecting;}update();},{threshold:.01});
   states.forEach(s=>observer.observe(s.canvas));
-  document.addEventListener('visibilitychange',update);document.addEventListener('lab-state',update);reduced.addEventListener('change',update);
-  dispose=()=>{dead=true;cancelAnimationFrame(frame);observer.disconnect();cleanups.forEach(fn=>fn());document.removeEventListener('visibilitychange',update);document.removeEventListener('lab-state',update);reduced.removeEventListener('change',update);};
+  document.addEventListener('scene-focus',update);document.addEventListener('visibilitychange',update);document.addEventListener('lab-state',update);reduced.addEventListener('change',update);
+  dispose=()=>{dead=true;cancelAnimationFrame(frame);observer.disconnect();cleanups.forEach(fn=>fn());document.removeEventListener('scene-focus',update);document.removeEventListener('visibilitychange',update);document.removeEventListener('lab-state',update);reduced.removeEventListener('change',update);};
   update();
 }

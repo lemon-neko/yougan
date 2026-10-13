@@ -25,7 +25,24 @@
       ],
       "featured": true,
       "source": null,
-      "interaction": null
+      "interaction": null,
+      "experience": {
+        "type": "salt",
+        "eyebrow": "02 / 一次小小的失手",
+        "headline": "青菜抢先\n抵达了海边。",
+        "instruction": "盐放多了？多盛一碗饭，试试看。",
+        "action": "多盛一碗饭",
+        "reset": "重新看盐落下",
+        "poem": [
+          "盐罐今天没刹住车，",
+          "青菜抢先抵达了海边。",
+          "我多盛一碗白饭，",
+          "把这次旅行吃完。"
+        ],
+        "before": "今天的失误，还在找落脚的地方。",
+        "after": "好了，这次旅行有米饭接住。",
+        "note": "虚构小诗与程序绘制餐盘，插画为 AI 辅助原创。"
+      }
     },
     {
       "id": "last-box",
@@ -57,7 +74,37 @@
       ],
       "featured": true,
       "source": null,
-      "interaction": null
+      "interaction": null,
+      "experience": {
+        "type": "box",
+        "eyebrow": "07 / 下一次见面之前",
+        "headline": "搬走的是行李。",
+        "instruction": "拆开胶带，再换个位置读一读。",
+        "action": "拆开最后一道胶带",
+        "perspectives": [
+          {
+            "id": "leaving",
+            "label": "搬走的人",
+            "title": "下次来，带一双拖鞋。",
+            "paragraphs": [
+              "我把缺口碗也装进去了。到了新家，它大概还会继续上班。",
+              "钥匙放在鞋柜第二层。空房间回声很大，我叫了一声你的名字，才想起你今天不用回来。",
+              "新地址已经发你。下次来的时候，不用带礼物，带一双你穿惯的拖鞋。"
+            ]
+          },
+          {
+            "id": "staying",
+            "label": "留下的人",
+            "title": "你的拖鞋，我先留着。",
+            "paragraphs": [
+              "我站在门口看了一会儿，才想起“易碎”写在了纸箱底下。希望搬家的人也看得见。",
+              "那只缺口碗没在架子上。原来它真的跟你走了，我又有点想笑。",
+              "新地址收到了。我回了一句“好”，又补上“你的拖鞋，我先留着”。"
+            ]
+          }
+        ],
+        "note": "短笺、人物和新增双视角均为虚构；插画为 AI 辅助原创。不替真实人物解释动机。"
+      }
     },
     {
       "id": "wide-table",
@@ -86,7 +133,38 @@
       ],
       "featured": true,
       "source": null,
-      "interaction": null
+      "interaction": null,
+      "experience": {
+        "type": "table",
+        "eyebrow": "08 / 一个人的两种今晚",
+        "headline": "今晚，桌子很宽。",
+        "instruction": "给空位一种意思，或者暂时不给。",
+        "choices": [
+          {
+            "id": "empty",
+            "label": "暂时空着",
+            "lines": [
+              "一碗面占左边，",
+              "一盏灯占右边。",
+              "中间空着，",
+              "先不替它安排什么。"
+            ],
+            "caption": "今天不需要把每个位置都填满。"
+          },
+          {
+            "id": "missing",
+            "label": "留给想念",
+            "lines": [
+              "一碗面占左边，",
+              "一盏灯占右边。",
+              "中间空着，",
+              "刚好放下一句：下次一起吃。"
+            ],
+            "caption": "想念可以坐一会儿，不用接管整顿晚餐。"
+          }
+        ],
+        "note": "虚构动态海报。两种文本是不同的创作视角，不是对独居者的情绪判断；配图为 AI 辅助原创。"
+      }
     },
     {
       "id": "shadow-ad",
@@ -115,7 +193,20 @@
       ],
       "featured": true,
       "source": null,
-      "interaction": null
+      "interaction": null,
+      "experience": {
+        "type": "shadow",
+        "eyebrow": "01 / 日常的另一面",
+        "headline": "今日广告：\n风经过这里。",
+        "instruction": "轻触改变风向，也可以让影子自己走一会儿。",
+        "action": "换一阵风",
+        "windLabels": [
+          "风从左边来。",
+          "风绕了一点路。",
+          "风从右边来。"
+        ],
+        "note": "树影与风向为程序创作，配图为 AI 辅助虚构街头图像。不是实地拍摄记录。"
+      }
     },
     {
       "id": "moon-library",
@@ -144,7 +235,30 @@
       ],
       "featured": true,
       "source": null,
-      "interaction": null
+      "interaction": null,
+      "experience": {
+        "type": "moon",
+        "eyebrow": "04 / 今晚发生的小事",
+        "headline": "月亮来图书馆还书",
+        "instruction": "三格故事，慢慢往下读。读到最后，可以替月亮盖一枚章。",
+        "action": "盖一枚日期章",
+        "stamped": "已归还 · 今晚",
+        "frames": [
+          {
+            "title": "01 / 夜间还书口",
+            "text": "月亮抱着比自己还宽的书。它今晚只想别把书角碰弯。"
+          },
+          {
+            "title": "02 / 柜台",
+            "text": "管理员拿起圆圆的日期章。月亮说：“这个形状，我也还在练习。”"
+          },
+          {
+            "title": "03 / 留下一点光",
+            "text": "月亮走后，桌上多了一枚月牙书签。刚好夹住今晚还没读完的那一页。"
+          }
+        ],
+        "note": "故事和人物均为虚构。三格画面复用有感 AI 辅助原创插画；盖章和书签为程序动画。"
+      }
     },
     {
       "id": "wrong-use-museum",
@@ -173,7 +287,37 @@
       ],
       "featured": false,
       "source": null,
-      "interaction": null
+      "interaction": null,
+      "experience": {
+        "type": "museum",
+        "eyebrow": "05 / 暂时离开说明书",
+        "headline": "今天，它不必有用。",
+        "instruction": "给熟悉的东西，换一份没有人招聘的工作。",
+        "objects": [
+          {
+            "id": "cup",
+            "name": "杯子",
+            "ordinary": "盛水，也盛一小段休息。",
+            "imagined": "袖珍望月镜",
+            "text": "把习惯盛水的口朝向夜空，今晚它负责盛一点月光。"
+          },
+          {
+            "id": "umbrella",
+            "name": "雨伞",
+            "ordinary": "下雨的时候，把肩膀藏进去。",
+            "imagined": "光的收集器",
+            "text": "今天不挡雨。它接住蓝色、橙色和一点金色，像一场倒着落下的晴天。"
+          },
+          {
+            "id": "clip",
+            "name": "回形针",
+            "ordinary": "把散开的几页纸留在一起。",
+            "imagined": "小门的把手",
+            "text": "它暂时不固定纸张，去固定一个入口。门后留着好奇心能通过的空隙。"
+          }
+        ],
+        "note": "虚构物件与展签，插画为 AI 辅助原创；用途转换为程序创作。"
+      }
     },
     {
       "id": "mood-palette",
@@ -631,7 +775,26 @@
       "subtitle": "蓝色粒子，慢慢聚成一个念头。",
       "hint": "移动鼠标，换个角度看这片粒子云。触屏上可轻触拖动。",
       "description": "粒子聚成云冠与细长的树干，底部的涟漪慢慢扩散。没有标准形状，你可以把它看成树、云，或者一个刚刚出现的念头。",
-      "credit": "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的粒子作品，未使用其源码或素材。"
+      "credit": "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的粒子作品，未使用其源码或素材。",
+      "kind": "original",
+      "format": "motion",
+      "author": "有感 · AI 辅助原创代码实验",
+      "source": null,
+      "collections": [],
+      "category": "creative",
+      "tags": [
+        "粒子",
+        "想象",
+        "念头"
+      ],
+      "body": [
+        "粒子聚成云冠与细长的树干，底部的涟漪慢慢扩散。没有标准形状，你可以把它看成树、云，或者一个刚刚出现的念头。",
+        "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的粒子作品，未使用其源码或素材。"
+      ],
+      "cover": "assets/curated-creative.jpg",
+      "coverAlt": "有感动态实验的静态配图，进入作品可观看实时画面",
+      "coverCredit": "有感 AI 辅助原创配图；动态作品由本地程序绘制。",
+      "interlude": "一顿饭之后，念头也可以慢慢长出来。"
     },
     {
       "id": "quiet-sphere",
@@ -640,7 +803,26 @@
       "subtitle": "没有大陆，只有绕行的微光。",
       "hint": "移动鼠标或轻触拖动，让点阵球朝不同方向转动。",
       "description": "一千多个光点在虚构球面上缓缓绕行。远处的点暗一点，近处的点亮一点，空间感来自这些很小的差别。暂停后，也可以从另一个方向观察。",
-      "credit": "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的点阵球，未使用其源码或素材。"
+      "credit": "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的点阵球，未使用其源码或素材。",
+      "kind": "original",
+      "format": "motion",
+      "author": "有感 · AI 辅助原创代码实验",
+      "source": null,
+      "collections": [],
+      "category": "aesthetic",
+      "tags": [
+        "光点",
+        "安静",
+        "空间"
+      ],
+      "body": [
+        "一千多个光点在虚构球面上缓缓绕行。远处的点暗一点，近处的点亮一点，空间感来自这些很小的差别。暂停后，也可以从另一个方向观察。",
+        "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的点阵球，未使用其源码或素材。"
+      ],
+      "cover": "assets/curated-aesthetic.jpg",
+      "coverAlt": "有感动态实验的静态配图，进入作品可观看实时画面",
+      "coverCredit": "有感 AI 辅助原创配图；动态作品由本地程序绘制。",
+      "interlude": "东西暂时不用有用。你也可以只看一会儿。"
     },
     {
       "id": "orbit-gallery",
@@ -657,7 +839,69 @@
         "assets/curated-empathy.jpg",
         "assets/curated-creative.jpg",
         "assets/salty-dinner.jpg"
-      ]
+      ],
+      "kind": "original",
+      "format": "motion",
+      "author": "有感 · AI 辅助原创代码实验",
+      "source": null,
+      "collections": [],
+      "category": "aesthetic",
+      "tags": [
+        "画廊",
+        "图片",
+        "好奇"
+      ],
+      "body": [
+        "从有感作品里取出几幅图，让它们在同一条轨道上缓缓经过。图片时而靠近、时而转向侧面，熟悉的作品也会产生陌生的关系。",
+        "有感原创代码实验 · AI 辅助实现。动态形式参考 MotionSites 展示的空间画廊；配图均为有感已有 AI 辅助原创插画。"
+      ],
+      "cover": "assets/moon-library.jpg",
+      "coverAlt": "有感动态实验的静态配图，进入作品可观看实时画面",
+      "coverCredit": "有感 AI 辅助原创配图；动态作品由本地程序绘制。",
+      "interlude": "把刚才遇见的作品，放回好奇心的轨道。"
     }
+  ],
+  "stream": [
+    {
+      "type": "item",
+      "id": "shadow-ad"
+    },
+    {
+      "type": "item",
+      "id": "salty-dinner"
+    },
+    {
+      "type": "experiment",
+      "id": "thought-cloud"
+    },
+    {
+      "type": "item",
+      "id": "moon-library"
+    },
+    {
+      "type": "item",
+      "id": "wrong-use-museum"
+    },
+    {
+      "type": "experiment",
+      "id": "quiet-sphere"
+    },
+    {
+      "type": "item",
+      "id": "last-box"
+    },
+    {
+      "type": "item",
+      "id": "wide-table"
+    },
+    {
+      "type": "experiment",
+      "id": "orbit-gallery"
+    }
+  ],
+  "streamRecommendations": [
+    "patatap",
+    "dear-data",
+    "window-swap"
   ]
 }
