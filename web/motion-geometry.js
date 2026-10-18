@@ -13,3 +13,7 @@ export function project(point,yaw,pitch,width,height,zoom=1){
   const scale=Math.min(width,height)*.34*zoom/(1-depth*.22);
   return {x:width/2+x*scale,y:height/2+y*scale,z:depth,scale};
 }
+export function createProjector(yaw,pitch,width,height,zoom=1){
+ const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch),base=Math.min(width,height)*.34*zoom;
+ return (px,py,pz,out)=>{const x=px*cy+pz*sy,z=-px*sy+pz*cy,y=py*cp-z*sp,depth=py*sp+z*cp,scale=base/(1-depth*.22);out.x=width/2+x*scale;out.y=height/2+y*scale;out.z=depth;out.scale=scale;return out;};
+}

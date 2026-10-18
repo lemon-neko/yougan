@@ -1,0 +1,19 @@
+export function museumArt(){return `<svg class="museum-svg" viewBox="0 0 600 440" aria-hidden="true"><defs>
+<linearGradient id="ceramic" x1="0" x2="1"><stop stop-color="#adbbb0"/><stop offset=".4" stop-color="#f4f0de"/><stop offset=".72" stop-color="#dcded0"/><stop offset="1" stop-color="#97a99b"/></linearGradient>
+<linearGradient id="metal" x1="0" x2="1"><stop stop-color="#6e807e"/><stop offset=".3" stop-color="#e8ece0"/><stop offset=".65" stop-color="#aabbb4"/><stop offset="1" stop-color="#718480"/></linearGradient>
+<linearGradient id="silk" x1="0" x2="1"><stop stop-color="#586879"/><stop offset=".35" stop-color="#a5b4b9"/><stop offset=".7" stop-color="#7e8c9d"/><stop offset="1" stop-color="#536577"/></linearGradient>
+<linearGradient id="caught-light" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e9ce8f" stop-opacity=".7"/><stop offset="1" stop-color="#e8cc98" stop-opacity="0"/></linearGradient>
+<radialGradient id="glass"><stop stop-color="#c5d8df"/><stop offset=".55" stop-color="#879daf"/><stop offset="1" stop-color="#374d5f"/></radialGradient>
+</defs>
+<ellipse class="object-ground" cx="300" cy="385" rx="128" ry="17" fill="#636d5b" opacity=".12"/>
+<g class="svg-cup"><g class="cup-stand" stroke="url(#metal)" fill="none" stroke-width="8" stroke-linecap="round"><path d="M298 271V310M298 302L226 382M298 302L367 382M298 302V384"/></g>
+<g class="cup-vessel"><path d="M386 171C460 154 463 273 395 281" fill="none" stroke="#899d90" stroke-width="23"/><path d="M386 169C452 161 454 265 394 273" fill="none" stroke="#d9dfd1" stroke-width="12"/>
+<path d="M210 150L224 282Q232 325 299 326Q369 325 380 281L393 150Z" fill="url(#ceramic)"/><ellipse cx="302" cy="150" rx="92" ry="24" fill="#b8c4b6"/><ellipse cx="302" cy="151" rx="79" ry="16" fill="#677f70"/><path d="M230 170L238 270Q242 291 254 296" fill="none" stroke="#fffbee" opacity=".5" stroke-width="5" stroke-linecap="round"/>
+<g class="cup-lens"><ellipse cx="302" cy="150" rx="79" ry="16" fill="url(#glass)"/><path d="M252 148Q281 136 321 140" fill="none" stroke="#e9f0ed" stroke-width="3"/><circle cx="334" cy="153" r="2" fill="#fff"/></g></g>
+<g class="cup-sky"><circle cx="470" cy="74" r="37" fill="#d7bf83"/><circle cx="487" cy="60" r="31" fill="#ede9df"/><path d="M416 79L410 92M413 85L424 87M490 145V159M483 152H497" stroke="#b7a36e" stroke-width="2"/></g></g>
+<g class="svg-umbrella"><g class="umbrella-rays"><path d="M220 212L145 385H255L285 212Z" fill="#829ace" opacity=".32"/><path d="M275 212L248 385H360L323 212Z" fill="url(#caught-light)"/><path d="M323 212L348 385H454L378 212Z" fill="#dc9d7d" opacity=".28"/></g>
+<path d="M300 188V349Q300 384 274 384Q250 384 250 359" stroke="url(#metal)" stroke-width="10" fill="none" stroke-linecap="round"/>
+<g class="umbrella-top"><path d="M135 206Q161 80 300 74Q439 80 465 206Q438 181 410 206Q381 183 354 206Q328 183 300 206Q271 182 244 206Q217 182 190 206Q160 181 135 206Z" fill="url(#silk)"/>
+<path d="M300 75Q240 89 190 205M300 75Q276 110 244 205M300 75V205M300 75Q325 112 354 205M300 75Q379 106 410 205" fill="none" stroke="#e7ece2" stroke-opacity=".5" stroke-width="1.6"/><path d="M300 61V75" stroke="#718582" stroke-width="5" stroke-linecap="round"/></g></g>
+<g class="svg-clip"><g class="clip-door-art"><path d="M207 48H403V365H207Z" fill="#abb2a0"/><path d="M220 61H390V354H220Z" fill="#536457"/><g class="door-leaf"><path d="M220 61L382 83V347L220 354Z" fill="#c4ccb7"/><path d="M232 77L367 96V331L232 339Z" fill="#dce0cb"/><path d="M232 77L367 96V102L232 85Z" fill="#f0efdf"/><path d="M382 83L390 79V351L382 347Z" fill="#929f8a"/></g></g>
+<g class="clip-form" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M330 143V296C330 322 275 323 275 296V133C275 93 346 94 346 134V307C346 353 258 353 258 307V151" stroke="#6d817f" stroke-width="15"/><path d="M330 143V296C330 322 275 323 275 296V133C275 93 346 94 346 134V307C346 353 258 353 258 307V151" stroke="url(#metal)" stroke-width="9"/></g></g></svg>`;}
