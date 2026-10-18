@@ -19,6 +19,7 @@ export function changeSceneState(raw,action,value){
  case 'object':s.object=Math.max(0,Math.min(2,Number(value)||0));break;
  case 'imagine':{const id=['cup','umbrella','clip'][s.object];s.imagined={...s.imagined,[id]:!s.imagined[id]};break;}
  case 'open':s.opened=!s.opened;break;case 'perspective':s.view=value==='staying'?'staying':'leaving';s.opened=true;break;
+ case 'table-toggle':s.choice=s.choice==='missing'?'empty':'missing';break;
  case 'table':s.choice=value==='missing'?'missing':'empty';break;
  }return s;
 }

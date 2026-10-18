@@ -52,3 +52,10 @@ export function parseRoute(hash) {
 
 export function getEntries(catalog){return [...catalog.items,...(catalog.experiments||[])];}
 export function entryHref(item){return `#/${item.effect?'motion':'item'}/${item.id}`;}
+
+// Discovery keeps its public query parameters while exposing removable conditions.
+export function activeFilters(filters={}) {
+ const labels={q:value=>`关键词：${value}`,category:value=>CATEGORY[value],kind:value=>({original:'有感原创',curated:'外部精选'}[value]),format:value=>FORMAT[value]};
+ return Object.entries(labels).flatMap(([key,label])=>{const value=String(filters[key]||'').trim();const text=value&&label(value);return text?[{key,value,label:text}]:[];});
+}
+export function removeFilter(filters,key){return {...filters,...(['q','category','kind','format'].includes(key)?{[key]:''}:{})};}

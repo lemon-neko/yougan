@@ -21,7 +21,7 @@ export function createJourney({main,catalog,render}){
   data.records[current.key]={...current,hash,snapshot};persist();
  }
  function origin(){return current?.origin&&data.records[current.origin]||null;}
- function backInfo(fallback,label){const from=origin();if(!from)return {href:fallback,label};const page=parseRoute(from.hash).page;return {href:from.hash,label:({home:'回到刚才的作品流',discover:'回到刚才的发现',saved:'回到收藏',collection:'回到专题',play:'回到玩一下'}[page]||'回到刚才的位置')};}
+ function backInfo(fallback,label){const from=origin();if(!from)return {href:fallback,label};const page=parseRoute(from.hash).page;return {href:from.hash,label:({home:'回到刚才的作品流',discover:'回到刚才的发现',saved:'回到收藏',collection:'回到专题',collections:'回到全部专题',play:'回到玩一下'}[page]||'回到刚才的位置')};}
  function updateResume(){
   const home=parseRoute(hash).page==='home';chapter.hidden=!home;
   const r=data.resume;resumeButton.hidden=!home||!r||!offerResume;resumeButton.textContent=r?'继续刚才的作品 ↗':'';
@@ -45,7 +45,7 @@ export function createJourney({main,catalog,render}){
  }
  function go(next,{brand=false,trigger,replace=false,resume=null}={}){
   next=safeHash(next);capture(trigger);offerResume=brand&&!!data.resume;const prior=current,priorPage=parseRoute(hash).page;
-  const isDetail=['item','motion'].includes(parseRoute(next).page);
+  const isDetail=['item','motion','collection'].includes(parseRoute(next).page);
   current={key:id(),index:replace?(prior?.index||0):(prior?.index||0)+1,origin:isDetail?(isDetail&&['item','motion'].includes(priorPage)?prior?.origin:prior?.key):null};
   history[replace?'replaceState':'pushState']({yougan:current},'',next);const wasHome=priorPage==='home';hash=next;
   chapter.open=false;
@@ -53,7 +53,7 @@ export function createJourney({main,catalog,render}){
   if(wasHome&&parseRoute(next).page==='home'&&!brand){updateResume();position({snapshot:resume,scene:resume?undefined:requested?ids.includes(requested)?requested:'invalid':undefined});}
   else show({snapshot:brand?undefined:resume});
  }
- function back(trigger){const from=origin();if(from&&Number.isInteger(from.index)&&from.index<current.index){capture(trigger);history.go(from.index-current.index);}else go(from?.hash||'#/',{trigger});}
+ function back(trigger){const from=origin();if(from&&Number.isInteger(from.index)&&from.index<current.index){capture(trigger);history.go(from.index-current.index);}else go(from?.hash||trigger?.getAttribute('href')||'#/',{trigger});}
  function sync(){
   const incoming=normalizeEntry(history.state?.yougan);
   if(incoming?.key===current?.key&&(location.hash||'#/')===hash)return;

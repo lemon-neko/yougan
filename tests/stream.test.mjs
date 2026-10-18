@@ -37,5 +37,5 @@ test('local module imports and stylesheet references resolve to built-source res
   const body=await readFile(new URL(file,base),'utf8');
   for(const match of body.matchAll(/from\s+['"](\.\/[^'"]+)['"]/g))assert.ok((await stat(new URL(match[1],base))).size>0);
  }
- const html=await readFile(new URL('index.html',base),'utf8');assert.ok(html.includes('scenes.css'));assert.ok((await stat(new URL('scenes.css',base))).size>0);
+ const html=await readFile(new URL('index.html',base),'utf8');assert.ok(html.includes('scenes.css'));for(const match of html.matchAll(/rel="stylesheet" href="([^"]+)"/g))assert.ok((await stat(new URL(match[1],base))).size>0);
 });
