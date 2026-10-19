@@ -6,11 +6,11 @@
 
 ![有感原创：影子替广告牌上班](web/assets/shadow-ad.jpg)
 
-有感是一个公开可浏览的创意、审美与共情集合地。从一块被树影接管的广告牌开始，沿着作品流，遇见盐放多了的午餐、借书的月亮和最后一个纸箱。轻触改变作品，也可以只停一会儿。
+有感是一个公开可浏览的创意、审美与共情集合地。从认真工作的冰箱和假装忙碌的微波炉开始，沿着作品流，遇见被树影接管的广告牌、盐放多了的午餐和借书的月亮。轻触改变作品，也可以只停一会儿。
 
 ## 这里有什么
 
-- **九段连续作品**：六组原创动态表达，与三个实时视觉实验交替出现。自然滚动，随看随玩。
+- **十段连续作品**：七组原创动态表达，与三个实时视觉实验交替出现。自然滚动，随看随玩。
 - **22 个发现**：七组原创作品、三个原创互动、三个动态实验、九个真实外部精选。
 - **新作 · 微波炉在摸鱼**：[打开厨房小剧场](https://yougan.ronniesheppsdiv.chatgpt.site/#/item/microwave-slacking)。冰箱冻得梆硬，微波炉忙了几轮，饭还是那块冰。打开看看，它到底在忙什么。
 - **三个实时动态作品**：[念头成云](https://yougan.ronniesheppsdiv.chatgpt.site/#/motion/thought-cloud)、[一颗安静的星球](https://yougan.ronniesheppsdiv.chatgpt.site/#/motion/quiet-sphere)、[绕着好奇心转](https://yougan.ronniesheppsdiv.chatgpt.site/#/motion/orbit-gallery)。支持改变观察角度、暂停和调速。

@@ -5,8 +5,8 @@ import {getEntries,entryHref,filterItems,createSavedStore,parseRoute} from '../w
 const catalog=JSON.parse(await readFile(new URL('../web/content/catalog.json',import.meta.url),'utf8'));
 const entries=getEntries(catalog);
 
-test('the authored stream has nine valid unique scenes and the selected external ending',()=>{
- assert.deepEqual(catalog.stream.map(x=>x.id),['shadow-ad','salty-dinner','thought-cloud','moon-library','wrong-use-museum','quiet-sphere','last-box','wide-table','orbit-gallery']);
+test('the authored stream has ten valid unique scenes and the selected external ending',()=>{
+ assert.deepEqual(catalog.stream.map(x=>x.id),['microwave-slacking','shadow-ad','salty-dinner','thought-cloud','moon-library','wrong-use-museum','quiet-sphere','last-box','wide-table','orbit-gallery']);
  for(const ref of catalog.stream){const item=(ref.type==='item'?catalog.items:catalog.experiments).find(i=>i.id===ref.id);assert.ok(item);if(ref.type==='item')assert.ok(item.experience);else assert.ok(item.interlude);}
  for(const id of catalog.streamRecommendations)assert.ok(catalog.items.find(i=>i.id===id&&i.kind==='curated')?.source.url);
 });
