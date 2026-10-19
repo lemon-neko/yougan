@@ -1,0 +1,44 @@
+/* The refrigerator does real work. All the microwave supplies is theatre. */
+.scene-microwave{background:#dce0d3;color:#38483e}
+.scene-microwave .scene-art{display:grid;grid-template-columns:minmax(270px,.8fr) minmax(0,1.4fr);column-gap:35px;row-gap:30px;align-items:center;min-height:850px;padding:100px 6vw 80px;background:radial-gradient(ellipse at 80% 20%,#f0e3c866,transparent 65%)}
+.microwave-heading{grid-column:1;align-self:end}.microwave-heading .scene-eyebrow{color:#627562;font-size:9px;letter-spacing:.06em}
+.microwave-heading :is(h1,h2){font-family:var(--serif);font-size:clamp(35px,3.8vw,57px);line-height:1.4;margin:25px 0 20px}
+.microwave-heading>p{font-size:12px;line-height:1.9;color:#64745f;max-width:28em}
+.microwave-composition{position:relative;grid-column:2;grid-row:1/3;align-self:center;min-width:0;padding:32px 0 40px}
+.microwave-visual{position:relative;box-shadow:14px 24px 40px #526a4f12;rotate:-1deg}
+.microwave-svg{display:block;width:100%;height:auto;overflow:visible}
+.appliance-label{position:absolute;top:0;font-size:9px;letter-spacing:.04em;line-height:1.7;color:#5c766b}
+.fridge-label{left:10%;display:flex;align-items:center;gap:7px}.appliance-dot{width:5px;height:5px;border-radius:50%;background:#5f968d;box-shadow:0 0 0 3px #85b3a51f}
+.microwave-label{right:4%;color:#8b7758}
+.ice-evidence{position:absolute;right:20%;bottom:0;font-family:var(--serif);font-size:15px;color:#65716a;rotate:2deg;border-bottom:1px solid #9bad9c70;padding:3px 0 7px}
+.microwave-narrative{grid-column:1;align-self:start;max-width:340px}
+.microwave-status{font-family:var(--serif);font-size:17px;line-height:1.9;min-height:100px;max-width:20em}
+.microwave-round{font-size:9px;color:#6b7e6e;letter-spacing:.12em;display:block;min-height:24px;font-variant-numeric:tabular-nums}
+.microwave-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:10px 0 22px;min-height:44px}
+.microwave-actions button{font-size:11px;padding:12px 17px;min-height:44px;border:1px solid #6d816b;border-radius:999px;color:#435b42;transition:background .25s,transform .25s}
+.microwave-actions button:hover{background:#f4f0d580;transform:translateY(-2px)}
+.microwave-actions button:active{transform:scale(.98)}
+.microwave-actions button:disabled{opacity:.6;cursor:default;transform:none;background:none}
+.microwave-actions [data-scene-action=microwave-check]{background:#536b56;color:#f5efdb;border-color:#536b56}
+.microwave-narrative .scene-instruction{opacity:1;color:#64715d;font-size:10px;line-height:1.9;max-width:28em}
+.microwave-lamp{transition:opacity .65s}
+.scene-microwave[data-microwave=spinning] .microwave-lamp{opacity:1}
+.microwave-plate-ring{transform-origin:606px 445px;animation:microwave-turn 2.5s linear infinite;animation-play-state:paused!important}
+.scene-microwave[data-microwave=spinning] .microwave-plate-ring{animation-play-state:var(--scene-play)!important}
+@keyframes microwave-turn{to{stroke-dashoffset:-196}}
+.microwave-dial{transform-origin:838px 451px;transition:transform .5s}.scene-microwave[data-microwave=spinning] .microwave-dial{transform:rotate(80deg)}
+.microwave-door-mesh,.microwave-glass-glint{transition:opacity .7s}
+.scene-microwave[data-microwave=caught] .microwave-door-mesh,.scene-microwave[data-microwave=caught] .microwave-glass-glint{opacity:0}
+.microwave-fish{transition:opacity .7s;animation:microwave-fish-swim 6s ease-in-out infinite alternate;animation-play-state:paused!important}
+.scene-microwave[data-microwave=caught] .microwave-fish{opacity:1;animation-play-state:var(--scene-play)!important}
+@keyframes microwave-fish-swim{from{transform:translate(0,0)}to{transform:translate(18px,-10px)}}
+body[data-motion-paused=true] .scene-microwave .microwave-plate-ring,body[data-motion-paused=true] .scene-microwave .microwave-fish{animation-play-state:paused!important}
+body[data-motion-paused=true] .scene-microwave :is(.microwave-lamp,.microwave-fish,.microwave-dial,.microwave-door-mesh,.microwave-glass-glint){transition:none}
+.scene-microwave .scene-footer,.scene-microwave .scene-reading{border-color:#6b805322}
+@media(max-width:1000px){.scene-microwave .scene-art{grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr);column-gap:20px;padding-inline:5vw}.microwave-status{font-size:16px}.microwave-heading :is(h1,h2){font-size:39px}}
+@media(max-width:767px){
+ .scene-microwave .scene-art{grid-template-columns:1fr;gap:28px;min-height:0;padding:70px 26px 48px}.microwave-heading{grid-column:1;grid-row:1;align-self:auto}.microwave-heading .scene-eyebrow{font-size:8px;max-width:30em}.microwave-heading :is(h1,h2){font-size:38px;line-height:1.4;margin:23px 0 16px}.microwave-heading>p{font-size:11px;max-width:28em}
+ .microwave-composition{grid-column:1;grid-row:2;width:calc(100% + 28px);margin-left:-14px;padding:26px 0 38px}.microwave-visual{rotate:0deg;box-shadow:7px 15px 20px #526a4f14}.appliance-label{font-size:8px;top:0}.fridge-label{left:7%}.microwave-label{right:2%}.ice-evidence{font-size:11px;right:13%;padding-bottom:5px}
+ .microwave-narrative{grid-column:1;grid-row:3;max-width:none}.microwave-status{font-size:16px;min-height:65px;max-width:28em}.microwave-actions{margin-top:5px;margin-bottom:20px;gap:10px}.microwave-actions button{font-size:10px;padding:11px 15px}.microwave-narrative .scene-instruction{max-width:30em}
+}
+@media(prefers-reduced-motion:reduce){.scene-microwave .scene-art *{animation:none!important;transition:none!important}.scene-microwave .microwave-fish{transform:none}}

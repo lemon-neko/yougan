@@ -116,3 +116,9 @@ Output: landscape roughly 3:2, art directed complete high quality raster image, 
 Original editorial concept art, explicitly not a screenshot or depiction of any existing product. Two small beautifully folded paper chairs, one cobalt blue and one coral orange, face each other at opposite sides of a warm rectangle of sunlight shaped by a nearby window on cream paper floor. Tender visual metaphor of listening and meeting, carefully crafted handmade paper textures, quiet editorial still life, diagonal composition with poetic empty space. No text or interface.
 ```
 
+
+## 微波炉在摸鱼 · 2026-10-19
+
+该作品使用原创代码绘制 SVG，没有新增文生图素材。画面由 `web/microwave-art.js` 维护，静态封面保存为 `web/assets/microwave-slacking.svg`，与互动共用冰箱、微波炉和完整冰块的几何；封面展示揭示后的小鱼。构思、文案与代码均为 AI 辅助原创。
+
+视觉方向：纸色厨房、自然窗光、青灰冰箱、米色微波炉；冰箱认真冻出一整块冰，微波炉反复亮灯转盘却没有加热，小鱼是“摸鱼”的视觉双关。静态封面不依赖脚本或外部图像。

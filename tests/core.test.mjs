@@ -3,15 +3,15 @@ import assert from 'node:assert/strict';
 import {readFile,stat} from 'node:fs/promises';
 import {CATEGORY,filterItems,randomOther,createSavedStore,MIXER,remix,rotatePalette,parseRoute} from '../web/core.js';
 const catalog=JSON.parse(await readFile(new URL('../web/content/catalog.json',import.meta.url),'utf8'));
-test('18 complete entries, nine originals and nine sourced selections',()=>{
- assert.equal(catalog.items.length,18);
- assert.equal(new Set(catalog.items.map(i=>i.id)).size,18);
- for(const kind of ['original','curated'])assert.equal(catalog.items.filter(i=>i.kind===kind).length,9);
+test('19 complete entries, ten originals and nine sourced selections',()=>{
+ assert.equal(catalog.items.length,19);
+ assert.equal(new Set(catalog.items.map(i=>i.id)).size,19);
+ assert.equal(catalog.items.filter(i=>i.kind==='original').length,10);assert.equal(catalog.items.filter(i=>i.kind==='curated').length,9);
  assert.equal(catalog.items.filter(i=>i.interaction).length,3);
  for(const i of catalog.items){assert.ok(CATEGORY[i.category]);assert.ok(i.body.length&&i.body.every(p=>typeof p==='string'&&p.length));assert.ok(i.coverAlt&&i.coverCredit&&i.author);if(i.kind==='curated'){assert.equal(new URL(i.source.url).protocol,'https:');assert.ok(i.source.author&&i.source.checkedAt&&i.source.accessNote);}else assert.equal(i.source,null);}
 });
 test('every artwork exists, collections have valid bidirectional references',async()=>{
- for(const i of catalog.items)assert.ok((await stat(new URL('../web/'+i.cover,import.meta.url))).size>10000);
+ for(const i of catalog.items){const resource=new URL('../web/'+i.cover,import.meta.url);assert.ok((await stat(resource)).size>0);if(i.cover.endsWith('.svg'))assert.match(await readFile(resource,'utf8'),/<svg[\s>]/);else assert.ok((await stat(resource)).size>10000);}
  assert.equal(catalog.collections.length,3);
  for(const c of catalog.collections){assert.ok(c.itemIds.length>=4);for(const id of c.itemIds){const item=catalog.items.find(i=>i.id===id);assert.ok(item,`Missing ${id}`);assert.ok(item.collections.includes(c.id));}}
  for(const i of catalog.items)for(const id of i.collections)assert.ok(catalog.collections.find(c=>c.id===id)?.itemIds.includes(i.id));

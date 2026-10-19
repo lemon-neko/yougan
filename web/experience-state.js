@@ -7,12 +7,17 @@ export function createStore(storage,key,normalize,fallback){
 export function getStorage(name){try{return window[name];}catch{return {getItem(){throw new Error('Unavailable');},setItem(){throw new Error('Unavailable');}};}}
 export function normalizeSceneState(raw={}){
  const r=raw&&typeof raw==='object'?raw:{};
- return {rice:r.rice===true,stamped:r.stamped===true,bookmark:Number.isInteger(r.bookmark)&&r.bookmark>=0&&r.bookmark<3?r.bookmark:0,object:Number.isInteger(r.object)&&r.object>=0&&r.object<3?r.object:0,
+ const microwave=['spinning','caught'].includes(r.microwave)?r.microwave:'frozen';
+ return {microwave,microwaveRounds:microwave==='frozen'?0:Math.max(1,Math.min(3,Math.trunc(Number(r.microwaveRounds)||1))),rice:r.rice===true,stamped:r.stamped===true,bookmark:Number.isInteger(r.bookmark)&&r.bookmark>=0&&r.bookmark<3?r.bookmark:0,object:Number.isInteger(r.object)&&r.object>=0&&r.object<3?r.object:0,
   imagined:{cup:r.imagined?.cup===true,umbrella:r.imagined?.umbrella===true,clip:r.imagined?.clip===true},opened:r.opened===true,view:r.view==='staying'?'staying':'leaving',choice:r.choice==='missing'?'missing':'empty',wind:Number.isInteger(r.wind)&&r.wind>=0&&r.wind<3?r.wind:0};
 }
 export function changeSceneState(raw,action,value){
  const s=normalizeSceneState(raw);
  switch(action){
+ case 'microwave-start':if(s.microwave==='frozen'){s.microwave='spinning';s.microwaveRounds=1;}break;
+ case 'microwave-wait':if(s.microwave==='spinning')s.microwaveRounds=Math.min(3,s.microwaveRounds+1);break;
+ case 'microwave-check':if(s.microwave==='spinning')s.microwave='caught';break;
+ case 'microwave-reset':s.microwave='frozen';s.microwaveRounds=0;break;
  case 'wind':s.wind=value===undefined?(s.wind+1)%3:Math.max(0,Math.min(2,Number(value)||0));break;
  case 'rice':s.rice=!s.rice;break;case 'stamp':s.stamped=true;break;
  case 'bookmark':s.bookmark=(s.bookmark+1)%3;break;case 'reread':s.stamped=false;s.bookmark=0;break;

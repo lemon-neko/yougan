@@ -1,6 +1,74 @@
 {
   "items": [
     {
+      "id": "microwave-slacking",
+      "title": "微波炉在摸鱼",
+      "subtitle": "冰箱冻得很实在。微波炉转了半天，饭还是那块冰。",
+      "kind": "original",
+      "category": "creative",
+      "format": "interactive",
+      "tags": [
+        "微波炉",
+        "冰箱",
+        "摸鱼",
+        "冷暖",
+        "日常",
+        "幽默"
+      ],
+      "cover": "assets/microwave-slacking.svg",
+      "coverAlt": "原创插画：认真冷冻的冰箱旁，微波炉亮着灯，转盘上的饭仍冻成一块冰，玻璃后面藏着一条光做的小鱼",
+      "coverCredit": "有感编辑部 · AI 辅助构思与代码绘制原创 SVG",
+      "author": "有感编辑部 · AI 辅助原创",
+      "body": [
+        "冰箱冻得很实在。\n一盒饭进去，\n一整块出来。",
+        "微波炉接过来，亮灯，转圈。\n第一轮，冰还是冰。\n又一轮，冰连一个角都没少。",
+        "打开门才发现：\n它把嗡嗡声交给转盘，\n自己在玻璃后面，\n给一条光做的小鱼放风。",
+        "冰箱看了一眼，没说话。\n它冻出来的东西，\n它自己心里有数。",
+        "一则虚构的厨房小故事。冰箱认真冷冻，微波炉用灯光和转盘假装加热；小鱼是摸鱼的视觉双关。人物化家电、转动轮次和显示屏都属于作品叙事。"
+      ],
+      "collections": [
+        "daily"
+      ],
+      "featured": true,
+      "source": null,
+      "interaction": null,
+      "experience": {
+        "type": "microwave",
+        "eyebrow": "厨房小剧场 / 各有各的工作态度",
+        "headline": "冰箱很实在。\n它，很会装忙。",
+        "instruction": "交给微波炉，等几轮。也可以随时打开看看。",
+        "action": "交给微波炉",
+        "waitAction": "再等一轮",
+        "checkAction": "打开看看",
+        "resetAction": "再抓它一次",
+        "waitEnd": "已经等得够久了",
+        "intro": "冰箱的工作成果：一整块，掰不开。",
+        "busy": [
+          "灯亮了，转盘动了。饭的温度，暂时没有消息。",
+          "第二轮。那块冰还是原来的形状。",
+          "第三轮。冰连一个角都没少。它到底在忙什么？"
+        ],
+        "revealed": "抓到了。它在给小鱼放风。饭，还是冻得很实在。",
+        "screenIdle": "--:--",
+        "screenBusy": [
+          "01:00",
+          "03:00",
+          "05:00"
+        ],
+        "screenCaught": "休 息",
+        "coldLabel": "冰箱 / 冷冻完成",
+        "busyLabel": "微波炉 / 看起来很忙",
+        "caughtLabel": "微波炉 / 原来在摸鱼",
+        "iceLabel": "仍然是一整块冰",
+        "roundLabel": "转盘轮次",
+        "restNote": "忙碌的声音，未必来自工作。",
+        "artFrozen": "冰箱已把饭冻成一整块，交给旁边尚未启动的微波炉。",
+        "artSpinning": "微波炉亮着暖灯，转盘反复转动，但中央的饭仍包在完整的蓝色冰块中。",
+        "artCaught": "打开玻璃后发现一条光做的小鱼，冰块没有融化，微波炉正在摸鱼。",
+        "note": "厨房、情节与拟人家电均为虚构。文案、原创 SVG 与轻互动由 AI 辅助创作；转盘轮次和屏幕数字是叙事设定，不是实际计时器。"
+      }
+    },
+    {
       "id": "salty-dinner",
       "title": "盐放多了的一顿饭",
       "subtitle": "今天的失误，有米饭接住。",
@@ -738,6 +806,7 @@
       "description": "盐罐、纸页、旧钥匙和一块空白广告牌。换一点点观察角度，熟悉的东西就开始讲新故事。",
       "cover": "assets/shadow-ad.jpg",
       "itemIds": [
+        "microwave-slacking",
         "salty-dinner",
         "shadow-ad",
         "moon-library",
@@ -746,6 +815,7 @@
         "dear-data"
       ],
       "viewingNotes": {
+        "microwave-slacking": "看看灯光和转盘忙了几轮，那块冰到底有没有变化。",
         "salty-dinner": "先看失误怎样被一碗饭接住，再读最后两行。",
         "shadow-ad": "把视线从广告文字移开，看看树影在做什么。",
         "moon-library": "留意月亮在意的书角，比它的愿望还具体。",

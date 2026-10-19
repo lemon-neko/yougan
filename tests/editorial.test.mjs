@@ -19,7 +19,7 @@ test('discovery conditions can be removed one by one without dropping other URL 
  filters=removeFilter(filters,'q');assert.equal(filters.q,'');assert.equal(filters.category,'creative');assert.equal(filters.format,'comic');
  assert.deepEqual(activeFilters(filters).map(f=>f.key),['category','kind','format']);
  for(const key of ['category','kind','format'])filters=removeFilter(filters,key);
- assert.equal(activeFilters(filters).length,0);assert.equal(filterItems(getEntries(catalog),filters).length,21);
+ assert.equal(activeFilters(filters).length,0);assert.equal(filterItems(getEntries(catalog),filters).length,22);
  assert.equal(filterItems(getEntries(catalog),{format:'website'}).length,9);
  assert.deepEqual(removeFilter({q:'声音'},'bogus'),{q:'声音'});
 });

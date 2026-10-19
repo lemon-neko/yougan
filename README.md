@@ -11,11 +11,12 @@
 ## 这里有什么
 
 - **九段连续作品**：六组原创动态表达，与三个实时视觉实验交替出现。自然滚动，随看随玩。
-- **21 个发现**：六组原创作品、三个原创互动、三个动态实验、九个真实外部精选。
+- **22 个发现**：七组原创作品、三个原创互动、三个动态实验、九个真实外部精选。
+- **新作 · 微波炉在摸鱼**：[打开厨房小剧场](https://yougan.ronniesheppsdiv.chatgpt.site/#/item/microwave-slacking)。冰箱冻得梆硬，微波炉忙了几轮，饭还是那块冰。打开看看，它到底在忙什么。
 - **三个实时动态作品**：[念头成云](https://yougan.ronniesheppsdiv.chatgpt.site/#/motion/thought-cloud)、[一颗安静的星球](https://yougan.ronniesheppsdiv.chatgpt.site/#/motion/quiet-sphere)、[绕着好奇心转](https://yougan.ronniesheppsdiv.chatgpt.site/#/motion/orbit-gallery)。支持改变观察角度、暂停和调速。
 - **三条策展路线**：发现页从把日常看陌生、不用语言也能表达、换个位置看世界开始；专题里的每件作品都有一句观看提示。搜索或筛选后直接查看结果，条件可逐项移除。
 - **打开就能玩**：心情调色盘可以下载小卡；创意碰撞机支持锁定元素；双视角故事邀请你换个位置读。
-- **给喜欢留个位置**：全部 21 项内容可搜索和收藏，原来的作品链接与浏览器收藏继续有效。
+- **给喜欢留个位置**：全部 22 项内容可搜索和收藏，原来的作品链接与浏览器收藏继续有效。
 - **照顾不同的观看方式**：全局暂停、系统减少动态效果、键盘操作和静态完整文字。
 - **浏览能接得上**：段落导航可直达九件作品；从详情返回会恢复来源、位置和焦点。刷新后可选择继续停留，点品牌名称从首屏重新开始。
 - **作品记得你的选择**：米饭接住一阵盐，纸箱旁留下碗或拖鞋，餐桌空位可出现一张纸条。同一标签页内保留这些选择，以及风向、各件展品的用途和月亮书签；手动暂停保存在当前浏览器。存储受限时仍能在本次页面操作。
@@ -42,7 +43,7 @@ node scripts/serve.mjs
 - `web/content/catalog.json`：作品、精选、专题、编辑手记、动态实验，以及首页顺序与原创体验配置。
 - `web/assets/`：原创作品和策展配图，[完整生成提示词](web/assets/artwork-prompts.md) 随项目保存。
 - `web/app.js`、`web/core.js`、`web/styles.css`：页面、浏览行为与视觉样式；`web/discovery.css` 维护策展导览与按行浏览的网格。
-- `web/scenes.js`、`web/scenes.css`：六件原创作品的呈现、轻互动、暂停与离屏管理；`web/domestic-art.js` 绘制餐盘、米饭、碗与拖鞋。
+- `web/scenes.js`、`web/scenes.css`：原创作品的呈现、轻互动、暂停与离屏管理；`web/domestic-art.js` 绘制餐盘、米饭、碗与拖鞋。
 - `web/motion-lab.js`、`web/motion-geometry.js`：本地实时绘制、空间投影与动画生命周期；不依赖模型 API 或第三方播放器。
 - 浏览恢复与标签页状态由 `web/journey.js`、`web/experience-state.js` 管理，动画激活与观看偏好由 `web/motion-state.js` 统一管理。
 - `scripts/`：静态构建与本地预览；`tests/`：内容完整性及关键行为测试。

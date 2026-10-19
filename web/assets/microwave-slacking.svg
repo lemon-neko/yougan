@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="微波炉在摸鱼：转盘上的饭还是一块冰" viewBox="0 0 1000 650" fill="none">
+<defs>
+<linearGradient id="mw-wall" x2="1" y2="1"><stop stop-color="#d6ded6"/><stop offset="1" stop-color="#e8d9bc"/></linearGradient>
+<linearGradient id="fridge-front"><stop stop-color="#aabbb5"/><stop offset=".35" stop-color="#d7ded1"/><stop offset="1" stop-color="#a9b9af"/></linearGradient>
+<linearGradient id="mw-front"><stop stop-color="#e9d8bb"/><stop offset=".5" stop-color="#f3e7cd"/><stop offset="1" stop-color="#c5b596"/></linearGradient>
+<linearGradient id="mw-top" x2="1" y2="1"><stop stop-color="#faf0d7"/><stop offset="1" stop-color="#c7c0a6"/></linearGradient>
+<linearGradient id="mw-glass" x2="1" y2="1"><stop stop-color="#233c42"/><stop offset="1" stop-color="#101e25"/></linearGradient>
+<linearGradient id="mw-ice" x2="1" y2="1"><stop stop-color="#c7edf0" stop-opacity=".95"/><stop offset=".55" stop-color="#88b8c5" stop-opacity=".9"/><stop offset="1" stop-color="#447e99" stop-opacity=".9"/></linearGradient>
+<radialGradient id="mw-warm"><stop stop-color="#f7cb7b" stop-opacity=".3"/><stop offset="1" stop-color="#f7cb7b" stop-opacity="0"/></radialGradient>
+<radialGradient id="mw-ground"><stop stop-color="#3f5949" stop-opacity=".25"/><stop offset="1" stop-color="#3f5949" stop-opacity="0"/></radialGradient>
+<pattern id="mw-mesh" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".65" fill="#e9ead5" opacity=".1"/></pattern>
+<clipPath id="mw-window"><rect x="446" y="286" width="319" height="199" rx="15"/></clipPath>
+</defs>
+<rect width="1000" height="650" fill="url(#mw-wall)"/>
+<path d="M0 105L230 0H395L0 213Z" fill="#fff9df" opacity=".24"/>
+<path d="M0 290L390 0H415L0 325Z" fill="#f9f4dc" opacity=".18"/>
+<path d="M0 543H1000V650H0Z" fill="#b8b5a0"/>
+<path d="M0 543L53 512H1000V543Z" fill="#d3cdb5"/>
+<path d="M0 544H1000" stroke="#949d89" stroke-width="2"/>
+<ellipse cx="206" cy="552" rx="161" ry="38" fill="url(#mw-ground)"/>
+<ellipse cx="685" cy="554" rx="294" ry="41" fill="url(#mw-ground)"/>
+<!-- The fridge has already done its job. -->
+<path d="M105 112L144 84H321L284 112Z" fill="#d5ddcd"/>
+<path d="M284 112L321 84V505L284 537Z" fill="#8daba1"/>
+<rect x="105" y="112" width="179" height="425" rx="8" fill="url(#fridge-front)" stroke="#8ca296"/>
+<path d="M107 263H282" stroke="#7c9b90" stroke-width="5"/>
+<path d="M118 120V253M118 274V521" stroke="#edf1db" stroke-width="3" opacity=".7"/>
+<rect x="251" y="150" width="8" height="76" rx="4" fill="#6f897d"/><rect x="251" y="295" width="8" height="91" rx="4" fill="#6f897d"/>
+<path d="M123 539V550H145V539M245 539V550H267V539" fill="#5c7064"/>
+<path d="M158 164H211V206H158Z" fill="#dbe5d0" stroke="#8ca99d" transform="rotate(-6 184 185)"/>
+<g stroke="#769e9e" stroke-width="2" stroke-linecap="round"><path d="M184 172V197M173 178L195 191M173 191L195 178"/><path d="M180 174L184 179L188 174M180 194L184 190L188 194"/></g>
+<circle cx="236" cy="431" r="4" fill="#87bdb1"/><path d="M169 430H220" stroke="#819c8b" stroke-width="3" opacity=".6"/>
+<!-- Countertop microwave: conspicuously busy, conspicuously ineffective. -->
+<path d="M414 249L455 214H931L892 249Z" fill="url(#mw-top)"/>
+<path d="M892 249L931 214V494L892 534Z" fill="#b8ad91"/>
+<rect x="414" y="249" width="478" height="285" rx="13" fill="url(#mw-front)" stroke="#b6a88c" stroke-width="2"/>
+<path d="M431 263H873" stroke="#fff5de" stroke-width="3" opacity=".8"/>
+<rect x="434" y="274" width="345" height="224" rx="20" fill="#6b7768"/>
+<rect x="442" y="282" width="329" height="208" rx="16" fill="url(#mw-glass)" stroke="#b6bd9e" stroke-width="2"/>
+<g clip-path="url(#mw-window)">
+<ellipse class="microwave-lamp" cx="704" cy="308" rx="173" ry="190" fill="url(#mw-warm)" opacity=".2"/>
+<path d="M456 451L584 405H761L759 485H446Z" fill="#486066" opacity=".45"/>
+<ellipse class="microwave-plate" cx="606" cy="445" rx="113" ry="25" fill="#8caba9" opacity=".7"/>
+<ellipse class="microwave-plate-ring" cx="606" cy="445" rx="97" ry="18" stroke="#c3d6cc" stroke-width="2" stroke-dasharray="46 19 5 28"/>
+<g class="microwave-meal"><path d="M534 411L550 455H670L682 411Z" fill="#d1c5a8"/><ellipse cx="608" cy="412" rx="75" ry="16" fill="#efdec0"/>
+<path d="M550 404L562 343L644 333L666 391L656 415L571 423Z" fill="url(#mw-ice)" stroke="#c7e7e9" stroke-width="2"/>
+<path d="M562 343L590 362L644 333M590 362L571 423M590 362L666 391" stroke="#def1ee" stroke-width="1.5" opacity=".7"/>
+<path d="M611 354L604 379L617 390L609 413M574 382L591 389L581 407" stroke="#d3f0f0" stroke-width="2"/>
+<path d="M565 370L577 364M621 400L636 398M629 362L638 365" stroke="#ecf9ed" stroke-width="3"/>
+</g>
+<g class="microwave-fish" opacity="1"><path d="M497 354Q472 340 456 352L463 366L454 379Q477 390 497 373Z" fill="#d88866"/><path d="M482 362Q501 335 530 356Q505 385 482 362Z" fill="#edb477"/><path d="M500 346L509 335L516 349" fill="#d49c6a"/><circle cx="519" cy="357" r="2.8" fill="#334e4a"/><path d="M489 361Q502 366 507 360" stroke="#f6d4a0" stroke-width="2"/><circle cx="540" cy="344" r="5" stroke="#b8d6c4"/><circle cx="551" cy="322" r="3" stroke="#b8d6c4"/></g>
+<rect class="microwave-door-mesh" x="446" y="286" width="319" height="199" fill="url(#mw-mesh)"/>
+<path class="microwave-glass-glint" d="M459 289L526 289L449 458V401Z" fill="#f2f3dc" opacity=".08"/>
+</g>
+<path d="M785 298V464" stroke="#a39375" stroke-width="14" stroke-linecap="round"/><path d="M782 299V460" stroke="#fff0cc" stroke-width="5" stroke-linecap="round"/>
+<rect x="809" y="284" width="64" height="43" rx="4" fill="#314c43"/><text data-microwave-screen x="841" y="311" text-anchor="middle" fill="#b8d7a5" font-size="18" font-family="monospace">--:--</text>
+<g fill="#a49d85"><rect x="814" y="347" width="23" height="13" rx="3"/><rect x="845" y="347" width="23" height="13" rx="3"/><rect x="814" y="371" width="23" height="13" rx="3"/><rect x="845" y="371" width="23" height="13" rx="3"/><rect x="814" y="395" width="23" height="13" rx="3"/><rect x="845" y="395" width="23" height="13" rx="3"/></g>
+<circle cx="841" cy="454" r="23" fill="#a7a18a"/><circle cx="838" cy="451" r="21" fill="#e9e0c5" stroke="#b0ab95"/><path class="microwave-dial" d="M838 451L848 437" stroke="#6d7a63" stroke-width="3" stroke-linecap="round"/>
+<path d="M445 535V548H470V535M846 535V548H871V535" fill="#697b68"/>
+<path d="M906 281L917 271M906 291L917 281M906 301L917 291M906 311L917 301M906 321L917 311" stroke="#8e967e" stroke-width="2"/>
+<path d="M352 523Q326 503 343 487Q350 479 359 488Q370 475 378 486Q394 501 368 523Z" fill="#bfb39a" opacity=".5"/>
+</svg>
